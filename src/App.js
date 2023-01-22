@@ -1,25 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import AnimatedRoutes from './components/AnimatedRoutes';
+import './App.scss';
+import { BrowserRouter as Router } from "react-router-dom";
+import React from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      previousPage: null,
+      thisPage: 0
+    }
+  }
+
+  goHandleClick(i) {
+    this.setState({
+      previousPage: i
+    })
+  }
+
+  whatPage(i) {
+    this.setState({
+      thisPage: i
+    })
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <Router>
+          <AnimatedRoutes previousPage={this.state.previousPage} thisPage={this.state.thisPage} whatPage={this.whatPage.bind(this)} goHandleClick={this.goHandleClick.bind(this)}/>
+        </Router>
+  </div>
+    );
+  }
 }
+
+  
 
 export default App;

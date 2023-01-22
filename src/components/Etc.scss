@@ -1,0 +1,77 @@
+.Etc-big-wrapper {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("../../public/images/night.jpg");
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+.Etc-big-wrapper p {
+    font-size: 1.3vw;
+}
+
+.card-container {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    transform: 
+    rotateY(calc(var(--offset) * 50deg)) 
+    scaleY(calc(1 + var(--abs-offset) * -0.4))
+    translateZ(calc(var(--abs-offset) * -30rem))
+    translateX(calc(var(--direction) * -5rem));
+    filter: blur(calc(var(--abs-offset) * 1rem));
+    transition: all 0.2s ease-out;
+
+}
+
+.carousel {
+    margin: 0;
+    width: 60vw;
+    height: 80vw;
+    position: relative;
+    perspective: 500px;
+    transform-style: preserve-3d;
+}
+
+.card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    height: 50%;
+    padding: 2rem;
+    border-radius: 1rem;
+    color: var(--mid);
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+
+.nav {
+    color: white;
+    font-size: 5rem;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 70%;
+    z-index: 2;
+    cursor: pointer;
+    user-select: none;
+    background: unset;
+    border: unset;
+    
+    &.left {
+      transform: translateX(-0%) translatey(-50%);
+    }
+    
+    &.right {
+      right: 0;
+      transform: translateX(0%) translatey(-50%);
+    }
+  }
