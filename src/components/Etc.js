@@ -85,26 +85,56 @@ class Etc extends React.Component {
 class Content extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {}
+        this.state = {
+            ingagas: false
+        }
+    }
+
+    ingagas(bool) {
+        this.setState({ingagas: bool})
     }
 
     render() { 
         return (
             <div className='Etc-big-wrapper'>
-                <div className='fade-in'>
+                <div className='fade-in' style={{opacity: 0}}>
                 <Carousel>
-                        <div className='card card1 glass'> <p> "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-
-</p> </div>
-                        <div className='card card2 glass'> <p> "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-
-</p>  </div>
-                        <div className='card card3 glass'> <p> "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-
-</p>  </div>
-                        <div className='card card4 glass'> <p> "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-
-</p>  </div>
+                        <div className='card card1 glass'> 
+                            <img className='cardimg' alt='formazione' src='/images/formazione.jpg' />
+                            <h2>Formazione</h2>
+                            <p>Mi sono laureato in Filosofia all'Alma Mater Studiorum nel 2016, con un orientamento curricolare di stampo epistemologico (Filosofia della scienza, della mente, della conoscenza, del linguaggio e logica).</p> 
+                                <br />
+                                <p>Ho continuato a studiare Filosofia fino al 2020 e la materia rimane tuttora uno dei miei principali interessi. Come ex studente Alma Mater ho avuto l'occasione di fare da relatore per svariati seminari sui temi della ricerca bibliografica, della filosofia politica, dell'impresa digitale e del giornalismo musicale. </p> 
+                        </div>
+                        <div className='card card2 glass'> 
+                        <img className='cardimg' alt='formazione' src='/images/professione.png' />
+                        <h2>Professione</h2>
+                            <p> Dal 2019 al 2021 ho lavorato come <strong>DIGITAL PROMOTER</strong> in Camera di Commercio di Bologna nel team Punto Impresa Digitale. 
+                            Il team si occupava di fornire valutazioni e assistenza per bandi europei nel quadro della transizione I4.0. Nello stesso periodo ho inoltre lavorato come RAO per emissione CNS.</p>
+                            <br />
+                            <p>Nel 2020 sono stato <strong>EVENT ASSISTANT</strong> freelance per webinar ECM in medicina, con un ruolo di assistenza tecnica, formazione e montaggio.</p>
+                        </div>
+                        <div className='card card3 glass'> 
+                        <img className='cardimg' alt='formazione' src='/images/associazione.png' />
+                        <h2>Associazionismo</h2>
+                            <p>Attualmente membro del network di Alumni dell'Alma Mater Studiorum 'Vivat Academia', di cui ho fatto parte del team 'Borse di Studio', che si occupa di costruire opportunità tra aziende e neolaureati</p>
+                            <br />
+                            <p>Dal 2017 al 2021 <strong>Leader</strong> dell'associazione studentesca universitaria S.V.Q.F.O. dell'Alma Mater Studiorum, esperienza formativa dalle infinite sfaccettature, riassumibili parzialmente nella sfera del team management, della gestione di fondi pubblici, della calendarizzazione di grandi eventi e delle PR con istituzioni cittadine e accademiche.  </p>  
+                        </div>
+                        <div className='card card4 glass'> 
+                        <img className='cardimg' alt='altro' src='/images/altro.png' />
+                        <h2>Altro</h2>
+                            <p> <strong>Giornalista musicale</strong> indipendente dal 2011. 
+                            <br />
+                            <p>Dal 2022 sono caporedattore e webmaster del magazine online <strong>Livore</strong>, di cui sono anche articolista e occasionalmente grafico.</p>
+                            <p><strong>Qui</strong> è possibile trovare l'elenco degli articoli che ho scritto nell'ultimo anno.</p>
+                            <br />
+                            <p>Sono un appassionato di <strong>UI/UX design</strong>, soprattutto nel contesto videoludico.</p>
+                            <br />
+                            <p>Ho un gatto nero, si chiama <strong className="ingagas" onMouseOver={() => this.ingagas(true)} onMouseLeave={() => this.ingagas(false)}>Ingagas</strong>, e tendenzialmente comanda lui.</p>
+                            <img className={"ingimg" + this.state.ingagas} src="/images/ingagas.jpg"/>
+                            </p>  
+                        </div>
                     </Carousel>
                     </div>
                 </div>
@@ -113,7 +143,7 @@ class Content extends React.Component {
 }
   
 const Carousel = ({children}) => {
-const [active, setActive] = useState(2);
+const [active, setActive] = useState(0);
 const count = React.Children.count(children);
 
 return (

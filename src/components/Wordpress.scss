@@ -31,6 +31,10 @@
     width: 65%;
     height: 15vh;
     z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5vw;
 }
 
 .Wordpress-small-wrapper {
@@ -45,6 +49,32 @@
     margin: 25px;
     width: 30%;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.Livore-sito .livore-pic {
+  height: 80%;
+  border-radius: 10px;
+}
+
+.Livore-sito p {
+  text-align: center;
+  font-size: 1.1em;
+  max-width: 80%;
+}
+
+.pic2-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pic2-wrapper img {
+  height: 15vh;
 }
 
 .Wordpress-img-wrapper {

@@ -87,10 +87,25 @@ class Content extends React.Component {
         return (
             <div className="Wordpress-page-wrapper">
             <div className='Wordpress-big-wrapper'>
-                <div className="Wordpress-header glass fade-in-fwd"></div>
+                <div className="Wordpress-header glass fade-in-fwd">
+                    <h1>Wordpress</h1>
+                </div>
                 <div className="Wordpress-small-wrapper">
-                    <div className="Livore-sito glass fade-in-top"><p>Lorem ipsum</p></div>
-                    <div className="Livore-articoli glass fade-in-top"><p>Lorem ipusm</p></div>
+                    <div className="Livore-sito glass fade-in-top">
+                        <img className="livore-pic" alt="livore-pic" src="/images/livoremobile.png"/>
+                        <p>Webmaster per il magazine online <b>Livore</b></p>
+                        
+                    </div>
+                    <div className="Livore-articoli glass fade-in-top">
+                        <p>Lorem ipsum</p>
+                        <p>Lorem ipsum</p>
+                        <p>Lorem ipsum</p>
+                        <p>Lorem ipsum</p>
+                        <p>Lorem ipsum</p>
+                        <p>Lorem ipsum</p>
+                        <p>Lorem ipsum</p>
+                        <p>Lorem ipsum</p>
+                    </div>
                 </div>
             </div>
             <div className='Wordpress-img-wrapper'>

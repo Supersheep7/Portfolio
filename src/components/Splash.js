@@ -1,5 +1,6 @@
 import React from 'react';
-import { easeOut, motion, spring } from "framer-motion"
+import './Splash.css'
+import { easeIn, easeInOut, easeOut, motion, spring, transform } from "framer-motion"
 import { Link } from "react-router-dom"
 
 class Splash extends React.Component {
@@ -20,16 +21,16 @@ class Splash extends React.Component {
                 initial={{opacity: 1 }} 
                 animate={{opacity: 1 }} 
                 exit={{ height: 0, bottom: "50%"}}
-                transition={{ duration: 0.4, ease: easeOut, type: spring }} 
+                transition={{ duration: 0.8, ease: easeOut, type: spring, delay: 1 }} 
                 className='Splash big-wrapper'>
                     
                     <motion.div 
                     key="Splash"
                     initial={{opacity: 1 }} 
                     animate={{opacity: 1 }} 
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.2, ease: easeOut, type: spring }} 
-                    className='Splash big-wrapper'>
+                    exit={{ opacity: 0, transform: "translateY(50%)" }}
+                    transition={{ duration: 0.6, ease: easeIn, type: spring, delay: 0.3 }} 
+                    className='Splash big-wrapper byebye'>
                             <Content />
                         
                     </motion.div>
