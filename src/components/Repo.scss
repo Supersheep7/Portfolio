@@ -5,10 +5,15 @@
     width: 75%;
     justify-content: space-evenly;
     align-items: center;
-}
-
-.Repo-content-wrapper  > * {
+  }
+  
+  .Repo-content-wrapper  > .wrapper {
+    position: relative;
     border: 8px solid;
+    background: rgba(223, 123, 79, 0.08);
+    border-radius: 16px;
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
     // Animate border
 
     -webkit-mask: 
@@ -26,25 +31,93 @@
   
     &:hover {
       
+      border-radius: 0px;
+      background-color: rgba(255, 255, 255, 0);
+      backdrop-filter: blur(0px);
       --_i: 100%;
       color: var(--accent);
-      transition: .3s, -webkit-mask-size .3s .3s;
+      transition: .5s, -webkit-mask-size .3s .3s;
+      opacity: 1;
     }
     
   }
 
+.Repo-child {
+  opacity: 0;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.Repo-child.hovertrue {
+  opacity: 1;
+  transition: opacity 0.8s ease-in-out;
+  cursor: pointer;
+}
+
+.title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 2.5vw;
+  transform: translate(-50%, -50%);
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  opacity: 1;
+}
+
+.title h2 {
+   text-shadow: 0px 0px 8px #df7b4f, 0px 0px 8px #df7b4f;
+}
+
+.title.hovertrue {
+  opacity: 0;
+  z-index: -2;
+  transition: opacity 0.3s ease-in-out
+}
 
 .Caverne-wrapper {
-    height: 40vh;
-    width: 100%;
+  height: 40vh;
+  width: 100%;
 }
+
+.Caverne-wrapper img {
+    height: 70%;
+    width: auto;
+    border-radius: 20px;
+}
+
+.Caverne-wrapper > * > img:first-child, .Caverne-wrapper > * > img:nth-child(2) {
+  box-shadow: 0px 0px 8px rgba(223, 123, 79, 0.8);
+} 
+
+.Caverne-wrapper > * > img:nth-child(3) {
+  filter: drop-shadow(0px 0px 3px rgba(223, 123, 79, 0.6)) drop-shadow(0px 0px 3px rgba(223, 123, 79, 0.6));
+} 
 
 .Filemanager-wrapper {
     height: 25vh;
     width: 100%;
 }
 
+.Filemanager-wrapper img {
+    border-radius: 10px;
+    box-shadow: 0px 0px 8px rgba(223, 123, 79, 0.8);
+    height: 60%;
+    width: auto;
+}
+
 .Github-wrapper {
+    opacity: 1;
     height: 20vh;
     width: 100%;
+    cursor: pointer;
+    text-shadow: 0px 0px 4px #df7b4f, 0px 0px 4px #df7b4f;
+}
+
+.Github-wrapper img {
+    height: 70%;
 }

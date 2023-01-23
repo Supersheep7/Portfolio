@@ -79,18 +79,52 @@ class Repo extends React.Component {
 class Content extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {}
+        this.state = {
+            open: []
+        }
+    }
+
+    hoverOn(x) {
+        this.setState({ open: [...this.state.open, x] })
+    }
+
+    hoverOff(x) {
+        this.setState({
+            open: this.state.open.filter((x, i) => i !== this.state.open.indexOf(x))
+          });
     }
 
     render() { 
+
         return (
             <div className='Repo-content-wrapper'>
-                
-                <div className='Caverne-wrapper '><div className='Repo-child'></div></div>
-
-                <div className='Filemanager-wrapper'><div className='Repo-child'></div></div>
-
-                <div className='Github-wrapper'><div className='Repo-child'></div></div>
+                <div className='Caverne-wrapper wrapper' onMouseEnter={() => this.hoverOn("caverne")} onMouseLeave={() => this.hoverOff("caverne")}>
+                    <div className={"title hover" + this.state.open.includes("caverne")}  >
+                    <h2>Caverne &amp; Viverne</h2>
+                    </div>
+                    <div className={'Repo-child hover' + this.state.open.includes("caverne")}>
+                        <img alt='caverne' src='/images/caverne.png'/>
+                        <img alt='caverne-dice' src='/images/caverne-dice.png'/>
+                        <img alt='caverne-mobile' src='/images/caverne-mobile.png'/>
+                    </div>
+                </div>
+                <div className='Filemanager-wrapper wrapper' onMouseEnter={() => this.hoverOn("music")} onMouseLeave={() => this.hoverOff("music")}>
+                <div className={"title hover" + this.state.open.includes("music")}>  
+                    <h2>Music Manager</h2>
+                </div>
+                    <div className={'Repo-child hover' + this.state.open.includes("music")}>
+                        <img alt='pre-manager' src='/images/pre-manager.png'/>
+                        <img alt='music-filter' src='/images/music-filter.png'/>
+                        <img alt='post-manager' src='/images/post-manager.png'/>
+                    </div>
+                </div>
+                <div className='Github-wrapper wrapper'>
+                    <div className='Repo-child' style={{ opacity: 1 }}>
+                    <h1>Puoi trovare i miei altri progetti sul mio profilo di Github</h1>
+                        <img alt='github' src='/images/github.png'/>
+                    </div>
+                </div>
+                        
 
             </div>
         )
