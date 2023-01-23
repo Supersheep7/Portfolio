@@ -82,8 +82,17 @@ p {
 }
 
 .Stack {
-    height: 25%;
+    height: 30%;
     width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.Stack img {
+    width: 6vw;
+    height: 6vw;
 }
 
 .Landing .glass {
@@ -101,9 +110,17 @@ p {
 }
 
 .Small-competences-wrapper > * {
-    width: 8vw;
-    height: 8vw;
+    width: 7.5vw;
+    height: 7.5vw;
     margin: 1vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Small-competences-wrapper img {
+    width: 5vw;
+    height: 5vw;
 }
 
 .Landing-bg-img-wrapper {

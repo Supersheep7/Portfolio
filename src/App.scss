@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 :root {
-  --black: #191212;
-  --dark: #1C1F1B;
-  --mid: #2E362F;
-  --light: #ffe3c6;
-  --accent: #df7b4f;
+  --black: #191212; // rgba(25, 18, 18, 1)
+  --dark: #1C1F1B; // rgba(28, 31, 27, 1)
+  --mid: #2E362F; // rgba(46, 54, 47, 1)
+  --light: #ffe3c6; // rgba(255, 227, 198, 1)
+  --accent: #df7b4f; // rgba(223, 123, 79, 1)
 }
 
 * {
@@ -167,6 +167,30 @@ p {
     opacity: 1;
   }
 }
+
+.fade-in {
+  -webkit-animation: fade-in 1.2s ease-in-out;
+	        animation: fade-in 1.2s ease-in-out;
+          animation-delay: 0.1s
+}
+
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 
 @media screen and (max-width: 1200px) {
   

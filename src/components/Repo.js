@@ -85,9 +85,13 @@ class Content extends React.Component {
     render() { 
         return (
             <div className='Repo-content-wrapper'>
-                <div className='Caverne-wrapper'></div>
-                <div className='Filemanager-wrapper'></div>
-                <div className='Github-wrapper'></div>
+                
+                <div className='Caverne-wrapper '><div className='Repo-child'></div></div>
+
+                <div className='Filemanager-wrapper'><div className='Repo-child'></div></div>
+
+                <div className='Github-wrapper'><div className='Repo-child'></div></div>
+
             </div>
         )
     }

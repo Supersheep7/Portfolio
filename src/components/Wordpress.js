@@ -1,7 +1,7 @@
 import React from 'react';
 import { easeOut, motion, spring } from "framer-motion"
 import { Link } from "react-router-dom"
-import "./Wordpress.css"
+import "./Wordpress.scss"
 
 class Wordpress extends React.Component {
     constructor(props) {
@@ -87,14 +87,19 @@ class Content extends React.Component {
         return (
             <div className="Wordpress-page-wrapper">
             <div className='Wordpress-big-wrapper'>
-                <div className="Wordpress-header glass"></div>
+                <div className="Wordpress-header glass fade-in-fwd"></div>
                 <div className="Wordpress-small-wrapper">
-                    <div className="Livore-sito glass"></div>
-                    <div className="Livore-articoli glass"></div>
+                    <div className="Livore-sito glass fade-in-top"><p>Lorem ipsum</p></div>
+                    <div className="Livore-articoli glass fade-in-top"><p>Lorem ipusm</p></div>
                 </div>
             </div>
             <div className='Wordpress-img-wrapper'>
-                <img className="Wordpress-img" src="images/planets.png"/>
+                <img className="Wordpress-img fade-in-fwd" src="images/sun.png" style={{ animationDelay: "0.8s" }}/>
+                <img className="Wordpress-img fade-in-fwd" src="images/twins.png" style={{ animationDelay: "1.2s" }}/>
+                <img className="Wordpress-img fade-in-fwd" src="images/timber.png" style={{ animationDelay: "1.6s" }}/>
+                <img className="Wordpress-img fade-in-fwd" src="images/brittle.png" style={{ animationDelay: "2s" }}/>
+                <img className="Wordpress-img fade-in-fwd" src="images/giant.png" style={{ animationDelay: "2.4s" }}/>
+                <img className="Wordpress-img fade-in-fwd" src="images/bramble.png" style={{ animationDelay: "2.8s" }}/>
             </div>
             </div>
         )

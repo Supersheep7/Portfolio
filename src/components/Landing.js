@@ -139,16 +139,21 @@ class Content extends React.Component {
                     </p>
                     </div> 
                 <div className="Competences-wrapper"> 
-                    <div className="Stack glass swing-in-top-fwd" style={{ animationDelay: "2.5s" }}></div> 
+                    <div className="Stack glass swing-in-top-fwd" style={{ animationDelay: "2.5s" }}>
+                        <img className='mongodb' alt='mongodb' src="/images/mongodb.png"/>    
+                        <img className='express' alt='express' src="/images/express.png"/>    
+                        <img className='react' alt='react' src="/images/react.png"/>    
+                        <img className='node' alt='node' src="/images/node.png"/>        
+                    </div> 
                     <div className="Small-competences-wrapper"> 
-                        <Glass n="1"/>
-                        <Glass n="2"/>
-                        <Glass n="3"/>
-                        <Glass n="4"/>
-                        <Glass n="5"/>
-                        <Glass n="6"/>
-                        <Glass n="7"/>
-                        <Glass n="8"/>
+                        <Glass n="1"  className='js'/>
+                        <Glass n="2"  className='jquery'/>
+                        <Glass n="3"  className='redux'/>
+                        <Glass n="4"  className='sass'/>
+                        <Glass n="5"  className='python'/>
+                        <Glass n="6"  className='django'/>
+                        <Glass n="7"  className='postgresql'/>
+                        <Glass n="8"  className='mysql'/>
                     </div> 
                 </div> 
             </div>
@@ -162,7 +167,9 @@ class Content extends React.Component {
 
 function Glass(props) {
     return (
-        <div className='glass swing-in-top-fwd' style={{ animationDelay: `${1000 + props.n*150}ms` }}></div>
+        <div className='glass swing-in-top-fwd' style={{ animationDelay: `${1000 + props.n*150}ms` }}>
+            <img className={props.className} alt={props.className} src={`/images/${props.className}.png`}/>
+        </div>
     )
 }
 
