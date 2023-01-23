@@ -93,18 +93,18 @@ class Content extends React.Component {
                 <div className="Wordpress-small-wrapper">
                     <div className="Livore-sito glass fade-in-top">
                         <img className="livore-pic" alt="livore-pic" src="/images/livoremobile.png"/>
-                        <p>Webmaster per il magazine online <b>Livore</b></p>
+                        <p>Sono il webmaster del magazine online <strong>Livore</strong></p>
                         
                     </div>
                     <div className="Livore-articoli glass fade-in-top">
-                        <p>Lorem ipsum</p>
-                        <p>Lorem ipsum</p>
-                        <p>Lorem ipsum</p>
-                        <p>Lorem ipsum</p>
-                        <p>Lorem ipsum</p>
-                        <p>Lorem ipsum</p>
-                        <p>Lorem ipsum</p>
-                        <p>Lorem ipsum</p>
+                        <h3>Con quali strumenti ho lavorato:</h3>
+                        <p>Plugin per Analytics</p>
+                        <p>Yoast SEO</p>
+                        <p>GDPR e Cookie consent</p>
+                        <p>Blocksy</p>
+                        <p>Elementor</p>
+                        <p>Stackable/Getwid/Spectra</p>
+                        <p>Woocommerce</p>
                     </div>
                 </div>
             </div>

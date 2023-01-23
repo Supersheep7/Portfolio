@@ -102,9 +102,9 @@ class Content extends React.Component {
                         <div className='card card1 glass'> 
                             <img className='cardimg' alt='formazione' src='/images/formazione.jpg' />
                             <h2>Formazione</h2>
-                            <p>Mi sono laureato in Filosofia all'Alma Mater Studiorum nel 2016, con un orientamento curricolare di stampo epistemologico (Filosofia della scienza, della mente, della conoscenza, del linguaggio e logica).</p> 
+                            <p>Mi sono laureato in <strong>FILOSOFIA</strong> all'Alma Mater Studiorum nel 2016, con un orientamento curricolare di stampo epistemologico (Filosofia della scienza, della mente, della conoscenza, del linguaggio e logica).</p> 
                                 <br />
-                                <p>Ho continuato a studiare Filosofia fino al 2020 e la materia rimane tuttora uno dei miei principali interessi. Come ex studente Alma Mater ho avuto l'occasione di fare da relatore per svariati seminari sui temi della ricerca bibliografica, della filosofia politica, dell'impresa digitale e del giornalismo musicale. </p> 
+                                <p>Ho continuato a studiare Filosofia fino al 2020 e la materia rimane tuttora uno dei miei principali interessi. Come ex studente Alma Mater ho avuto l'occasione di fare da <strong>RELATORE</strong> per svariati seminari sui temi della ricerca bibliografica, della filosofia politica, dell'impresa digitale e del giornalismo musicale. </p> 
                         </div>
                         <div className='card card2 glass'> 
                         <img className='cardimg' alt='formazione' src='/images/professione.png' />
@@ -117,23 +117,22 @@ class Content extends React.Component {
                         <div className='card card3 glass'> 
                         <img className='cardimg' alt='formazione' src='/images/associazione.png' />
                         <h2>Associazionismo</h2>
-                            <p>Attualmente membro del network di Alumni dell'Alma Mater Studiorum 'Vivat Academia', di cui ho fatto parte del team 'Borse di Studio', che si occupa di costruire opportunità tra aziende e neolaureati</p>
+                            <p>Attualmente <strong>MEMBRO</strong> del network di Alumni dell'Alma Mater Studiorum 'Vivat Academia', di cui ho fatto parte del team 'Borse di Studio', che si occupa di costruire opportunità tra aziende e neolaureati</p>
                             <br />
-                            <p>Dal 2017 al 2021 <strong>Leader</strong> dell'associazione studentesca universitaria S.V.Q.F.O. dell'Alma Mater Studiorum, esperienza formativa dalle infinite sfaccettature, riassumibili parzialmente nella sfera del team management, della gestione di fondi pubblici, della calendarizzazione di grandi eventi e delle PR con istituzioni cittadine e accademiche.  </p>  
+                            <p>Dal 2017 al 2021 <strong>LEADER</strong> dell'associazione studentesca universitaria S.V.Q.F.O. dell'Alma Mater Studiorum, esperienza formativa dalle infinite sfaccettature, riassumibili parzialmente nella sfera del team management, della gestione di fondi pubblici, della calendarizzazione di grandi eventi e delle PR con istituzioni cittadine e accademiche.  </p>  
                         </div>
                         <div className='card card4 glass'> 
                         <img className='cardimg' alt='altro' src='/images/altro.png' />
                         <h2>Altro</h2>
-                            <p> <strong>Giornalista musicale</strong> indipendente dal 2011. 
+                            <p> <strong>GIORNALISTA MUSICALE</strong> indipendente dal 2011.  </p>
                             <br />
-                            <p>Dal 2022 sono caporedattore e webmaster del magazine online <strong>Livore</strong>, di cui sono anche articolista e occasionalmente grafico.</p>
-                            <p><strong>Qui</strong> è possibile trovare l'elenco degli articoli che ho scritto nell'ultimo anno.</p>
+                            <p>Dal 2022 sono <strong>CAPOREDATTORE</strong> e webmaster del magazine online <b>Livore</b>, di cui sono anche articolista e occasionalmente grafico.</p>
+                            <p><b>Qui</b> è possibile trovare l'elenco degli articoli che ho scritto nell'ultimo anno.</p>
                             <br />
-                            <p>Sono un appassionato di <strong>UI/UX design</strong>, soprattutto nel contesto videoludico.</p>
+                            <p>Sono un appassionato di <b>UI/UX design</b>, soprattutto nel contesto videoludico.</p>
                             <br />
-                            <p>Ho un gatto nero, si chiama <strong className="ingagas" onMouseOver={() => this.ingagas(true)} onMouseLeave={() => this.ingagas(false)}>Ingagas</strong>, e tendenzialmente comanda lui.</p>
+                            <p>Ho un gatto nero, si chiama <strong className="ingagas" onMouseOver={() => this.ingagas(true)} onMouseLeave={() => this.ingagas(false)}>INGAGAS</strong>, e tendenzialmente comanda lui.</p>
                             <img className={"ingimg" + this.state.ingagas} src="/images/ingagas.jpg"/>
-                            </p>  
                         </div>
                     </Carousel>
                     </div>

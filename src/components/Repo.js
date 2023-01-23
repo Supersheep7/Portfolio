@@ -101,6 +101,7 @@ class Content extends React.Component {
                 <div className='Caverne-wrapper wrapper' onMouseEnter={() => this.hoverOn("caverne")} onMouseLeave={() => this.hoverOff("caverne")}>
                     <div className={"title hover" + this.state.open.includes("caverne")}  >
                     <h2>Caverne &amp; Viverne</h2>
+                    <p>Una web app fullstack per gestire schede di un gioco di ruolo homebrew con dice roller integrato, form per aggiornare il database e admin panel per il DM</p>
                     </div>
                     <div className={'Repo-child hover' + this.state.open.includes("caverne")}>
                         <img alt='caverne' src='/images/caverne.png'/>
@@ -110,7 +111,8 @@ class Content extends React.Component {
                 </div>
                 <div className='Filemanager-wrapper wrapper' onMouseEnter={() => this.hoverOn("music")} onMouseLeave={() => this.hoverOff("music")}>
                 <div className={"title hover" + this.state.open.includes("music")}>  
-                    <h2>Music Manager</h2>
+                    <div><h2>Music Manager</h2></div>
+                    <div><p>Uno script programmato in python per organizzare i file musicali in cartelle Artist/Album</p></div>
                 </div>
                     <div className={'Repo-child hover' + this.state.open.includes("music")}>
                         <img alt='pre-manager' src='/images/pre-manager.png'/>
@@ -120,7 +122,7 @@ class Content extends React.Component {
                 </div>
                 <div className='Github-wrapper wrapper'>
                     <div className='Repo-child' style={{ opacity: 1 }}>
-                    <h1>Puoi trovare i miei altri progetti sul mio profilo di Github</h1>
+                    <h1>Puoi trovare i miei altri progetti su Github</h1>
                         <img alt='github' src='/images/github.png'/>
                     </div>
                 </div>

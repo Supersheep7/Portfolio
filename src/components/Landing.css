@@ -89,6 +89,10 @@ p {
     align-items: center;
 }
 
+.about-wrapper * {
+    font-size: 0.8vw;
+}
+
 .Landing-big-content {
     width: 100%;
     height: 30vh;

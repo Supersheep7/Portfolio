@@ -136,7 +136,6 @@ class Content extends React.Component {
                         <p>+39 339 545 2982</p>
                         <p>alessandro.corona.m@gmail.com</p>
                         <p>22/12/1993</p>
-                        <p>Napoli</p>
                         <div className='social'>
                             <img alt='facebook' src="/images/facebook.png"/>
                             <img alt='instagram' src="/images/instagram.png"/>
@@ -146,9 +145,12 @@ class Content extends React.Component {
                 </div>
                 <div className='Landing-right'>
                 <div className="Landing-big-content glass swing-in-top-fwd" style={{ animationDelay: this.props.delayed*1000 + 500 + "ms" }}>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    </p>
+                    <div className="about-wrapper">
+                    <p>Ciao, sono Alessandro, uno <strong>sviluppatore web</strong> autodidatta. </p>
+                       <p>Per maturare le mie prime competenze ho studiato i curriculum online di <strong>W3</strong>, <strong>CS50</strong>, <strong>freecodecamp</strong>, <strong>The Odin Project</strong>.</p>
+                       <p>Finora ho lavorato in <strong>MERN</strong> stack per costruire web app scalabili con framework leggeri senza rinunciare ad usare React, la mia scelta per il frontend.</p>
+                       <p>Implemento vanillaJS e jQuery laddove necessario; so scrivere in python e realizzare app su django/flask. Ho una buona comprensione generale dei database relazionali, anche se non li ho mai usati in un progetto personale.</p>
+                    </div>
                     </div> 
                 <div className="Competences-wrapper"> 
                     <div className="Stack glass swing-in-top-fwd" style={{ animationDelay: this.props.delayed*1000 + 2500 + "ms" }}>

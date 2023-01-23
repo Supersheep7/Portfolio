@@ -66,17 +66,27 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  font-size: 2.5vw;
+  font-size: 2.2vw;
   transform: translate(-50%, -50%);
   height: 100%;
+  width: 100%;
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: space-evenly;
   align-items: center;
   opacity: 1;
+  padding: 0 30px 0px 30px;
+  text-shadow: 0px 0px 8px #df7b4f, 0px 0px 8px #df7b4f;
+}
+
+.title p {
+  margin: 0;
+  font-size: 1.2vw;
+  text-align: center;
 }
 
 .title h2 {
-   text-shadow: 0px 0px 8px #df7b4f, 0px 0px 8px #df7b4f;
+  margin: 0;
 }
 
 .title.hovertrue {
@@ -128,6 +138,10 @@
     width: 100%;
     cursor: pointer;
     text-shadow: 0px 0px 4px #df7b4f, 0px 0px 4px #df7b4f;
+}
+
+.Github-wrapper > .Repo-child {
+  justify-content: space-evenly;
 }
 
 .Github-wrapper img {
