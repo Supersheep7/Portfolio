@@ -1,5 +1,5 @@
 import React from 'react';
-import "./Landing.css"
+import "./Landing.scss"
 import { easeOut, motion, spring } from "framer-motion"
 import { Link } from "react-router-dom"
 
@@ -124,7 +124,7 @@ class Content extends React.Component {
             transition={{ duration: this.props.delayed + 0.8, ease: easeOut, type: spring }} 
             exit={{opacity  : 1 }}
             className="Landing-content-wrapper">
-                <div className="picandbio fade-in-top" style={{ animationDelay: this.props.delayed*1000 + 1000 + "ms" }}>
+                <div className="picandbio fade-in-top small-none" style={{ animationDelay: this.props.delayed*1000 + 1000 + "ms" }}>
                         <div className='Propic-wrapper'>
                             <div className="clipping-mask">
                                 <img className="Propic" src="images/propic.jpg"/>
@@ -144,13 +144,29 @@ class Content extends React.Component {
                     </div>
                 </div>
                 <div className='Landing-right'>
+                <div className='Bio small-yes'>
+                <div className='Propic-wrapper'>
+                            <div className="clipping-mask">
+                                <img className="Propic" src="images/propic.jpg"/>
+                            </div>
+                        </div>
+                <div className="name-and-social">
+                    <h1>Alessandro Corona Mendozza</h1>
+                    <div className='social'>
+                        <img alt='facebook' src="/images/facebook.png"/>
+                        <img alt='instagram' src="/images/instagram.png"/>
+                        <img alt='mail' src="/images/mail.png"/>
+                        <img alt='phone' src="/images/telephone.png"/>
+                    </div>
+                </div>
+                </div>
                 <div className="Landing-big-content glass swing-in-top-fwd" style={{ animationDelay: this.props.delayed*1000 + 500 + "ms" }}>
                     <div className="about-wrapper">
                     <p>Ciao, sono Alessandro, uno <strong>sviluppatore web</strong> autodidatta. </p>
                        <p>Per maturare le mie prime competenze ho studiato i curriculum online di <strong>W3</strong>, <strong>CS50</strong>, <strong>freecodecamp</strong>, <strong>The Odin Project</strong>.</p>
                        <p>Finora ho lavorato in <strong>MERN</strong> stack per costruire web app scalabili con framework leggeri senza rinunciare ad usare React, la mia scelta per il frontend.</p>
-                       <p>Implemento vanillaJS e jQuery laddove necessario; so scrivere in python e realizzare app su django/flask. Ho una buona comprensione generale dei database relazionali, anche se non li ho mai usati in un progetto personale.</p>
-                    </div>
+                       <span className='tablet-none'><p>Implemento vanillaJS e jQuery laddove necessario; so scrivere in python e realizzare app su django/flask. Ho una buona comprensione generale dei database relazionali, anche se non li ho mai usati in un progetto personale.</p>
+                    </span></div>
                     </div> 
                 <div className="Competences-wrapper"> 
                     <div className="Stack glass swing-in-top-fwd" style={{ animationDelay: this.props.delayed*1000 + 2500 + "ms" }}>
@@ -171,7 +187,7 @@ class Content extends React.Component {
                     </div> 
                 </div> 
             </div>
-                <div className="Landing-bg-img-wrapper">
+                <div className="Landing-bg-img-wrapper small-none">
                     <img className="Landing-bg-img" src="./images/linesmooth.png" />
                 </div>
             </motion.div>

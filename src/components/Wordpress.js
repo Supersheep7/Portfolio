@@ -109,7 +109,7 @@ class Content extends React.Component {
                                 <div className="livore-title">
                                 <h2><strong>Wordpress Webmaster</strong></h2>
                                 </div>
-                                <div className="Livore-text">
+                                <div className="small-none Livore-text tablet-none">
                                     <p>Plugin per Analytics</p>
                                     <p>Yoast SEO</p>
                                     <p>GDPR e Cookie consent</p>
@@ -118,6 +118,9 @@ class Content extends React.Component {
                                     <p>Stackable/Getwid/Spectra</p>
                                     <p>Woocommerce</p>
                                 </div>    
+                                <div className='small-yes tablet-yes'>
+                                    <p>Analytics / SEO / GDPR / Themes / Elementor / Getwid / Woocommerce</p>
+                                </div>
                         </div>
         )
     }
@@ -136,13 +139,22 @@ class Content extends React.Component {
                 {this.HoverWrapper()}
                 </div> )
                 }  
-                <div className='Wordpress-img-wrapper'>
+                <div className='Wordpress-img-wrapper tablet-none'>
                     <img className="Wordpress-img fade-in-fwd" src="images/sun.png" style={{ animationDelay: "0.8s" }}/>
                     <img className="Wordpress-img fade-in-fwd" src="images/twins.png" style={{ animationDelay: "1.2s" }}/>
                     <img className="Wordpress-img fade-in-fwd" src="images/timber.png" style={{ animationDelay: "1.6s" }}/>
                     <img className="Wordpress-img fade-in-fwd" src="images/brittle.png" style={{ animationDelay: "2s" }}/>
                     <img className="Wordpress-img fade-in-fwd" src="images/giant.png" style={{ animationDelay: "2.4s" }}/>
                     <img className="Wordpress-img fade-in-fwd" src="images/bramble.png" style={{ animationDelay: "2.8s" }}/>
+                </div>
+                <div className="tablet-yes small-none">
+                                <p>Plugin per Analytics</p>
+                                    <p>Yoast SEO</p>
+                                    <p>GDPR e Cookie consent</p>
+                                    <p>Blocksy</p>
+                                    <p>Elementor</p>
+                                    <p>Stackable/Getwid/Spectra</p>
+                                    <p>Woocommerce</p>
                 </div>
             </div>
         )

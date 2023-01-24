@@ -105,8 +105,8 @@ class Content extends React.Component {
                     </div>
                     <div className={'Repo-child hover' + this.state.open.includes("caverne")}>
                         <img alt='caverne' src='/images/caverne.png'/>
-                        <img alt='caverne-dice' src='/images/caverne-dice.png'/>
-                        <img alt='caverne-mobile' src='/images/caverne-mobile.png'/>
+                        <img className="tablet-none" alt='caverne-dice' src='/images/caverne-dice.png'/>
+                        <img className="small-none" alt='caverne-mobile' src='/images/caverne-mobile.png'/>
                     </div>
                 </div>
                 <div className='Filemanager-wrapper wrapper' onMouseEnter={() => this.hoverOn("music")} onMouseLeave={() => this.hoverOff("music")}>
@@ -115,14 +115,14 @@ class Content extends React.Component {
                     <div><p>Uno script programmato in python per organizzare i file musicali in cartelle Artist/Album</p></div>
                 </div>
                     <div className={'Repo-child hover' + this.state.open.includes("music")}>
-                        <img alt='pre-manager' src='/images/pre-manager.png'/>
+                        <img className="tablet-none" alt='pre-manager' src='/images/pre-manager.png'/>
                         <img alt='music-filter' src='/images/music-filter.png'/>
-                        <img alt='post-manager' src='/images/post-manager.png'/>
+                        <img className="tablet-none" alt='post-manager' src='/images/post-manager.png'/>
                     </div>
                 </div>
                 <div className='Github-wrapper wrapper'>
                     <div className='Repo-child' style={{ opacity: 1 }}>
-                    <h1>Puoi trovare i miei altri progetti su Github</h1>
+                    <h1><span className="small-none">Puoi trovare i miei altri progetti su </span>Github</h1>
                         <img alt='github' src='/images/github.png'/>
                     </div>
                 </div>

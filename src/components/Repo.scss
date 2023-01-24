@@ -149,3 +149,42 @@
     height: 70%;
     filter:drop-shadow(0 0 3px #df7b4f)
 }
+
+
+@media screen and (max-width: 1200px) {   // Desktop small
+  .tablet-none {
+    display: none;
+  }
+  h1, .title h2 {
+    font-size: 3vw
+  }
+  .title p {
+    font-size: 1.6vw;
+  }
+}
+
+@media screen and (max-width: 945px) {  // tablet
+  .small-none {
+    display: none;
+  }
+  h1, .title h2 {
+    font-size: calc(16px + 2vw)
+  }
+  .title p {
+    font-size: calc(12px + 0.5vw);
+  }
+  .Filemanager-wrapper img {
+    max-width: 70vw;
+    max-height: 15vw;
+  }
+  .Caverne-wrapper img {
+    width: 58vw;
+    height: 26vw;
+    max-width: 70vw;
+    max-height: 40vw;
+  }
+}
+
+@media screen and (max-width: 450px) {  // mobile
+
+}

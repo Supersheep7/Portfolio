@@ -102,37 +102,43 @@ class Content extends React.Component {
                         <div className='card card1 glass'> 
                             <img className='cardimg' alt='formazione' src='/images/formazione.jpg' />
                             <h2>Formazione</h2>
+                            <div>
                             <p>Mi sono laureato in <strong>FILOSOFIA</strong> all'Alma Mater Studiorum nel 2016, con un orientamento curricolare di stampo epistemologico (Filosofia della scienza, della mente, della conoscenza, del linguaggio e logica).</p> 
                                 <br />
                                 <p>Ho continuato a studiare Filosofia fino al 2020 e la materia rimane tuttora uno dei miei principali interessi. Come ex studente Alma Mater ho avuto l'occasione di fare da <strong>RELATORE</strong> per svariati seminari sui temi della ricerca bibliografica, della filosofia politica, dell'impresa digitale e del giornalismo musicale. </p> 
+                            </div>
                         </div>
                         <div className='card card2 glass'> 
                         <img className='cardimg' alt='formazione' src='/images/professione.png' />
                         <h2>Professione</h2>
+                        <div>
                             <p> Dal 2019 al 2021 ho lavorato come <strong>DIGITAL PROMOTER</strong> in Camera di Commercio di Bologna nel team Punto Impresa Digitale. 
                             Il team si occupava di fornire valutazioni e assistenza per bandi europei nel quadro della transizione I4.0. Nello stesso periodo ho inoltre lavorato come RAO per emissione CNS.</p>
                             <br />
                             <p>Nel 2020 sono stato <strong>EVENT ASSISTANT</strong> freelance per webinar ECM in medicina, con un ruolo di assistenza tecnica, formazione e montaggio.</p>
                         </div>
+                        </div>
                         <div className='card card3 glass'> 
                         <img className='cardimg' alt='formazione' src='/images/associazione.png' />
-                        <h2>Associazionismo</h2>
+                            <h2>Associazionismo</h2>
+                        <div>
                             <p>Attualmente <strong>MEMBRO</strong> del network di Alumni dell'Alma Mater Studiorum 'Vivat Academia', di cui ho fatto parte del team 'Borse di Studio', che si occupa di costruire opportunità tra aziende e neolaureati</p>
                             <br />
                             <p>Dal 2017 al 2021 <strong>LEADER</strong> dell'associazione studentesca universitaria S.V.Q.F.O. dell'Alma Mater Studiorum, esperienza formativa dalle infinite sfaccettature, riassumibili parzialmente nella sfera del team management, della gestione di fondi pubblici, della calendarizzazione di grandi eventi e delle PR con istituzioni cittadine e accademiche.  </p>  
                         </div>
+                        </div>
                         <div className='card card4 glass'> 
                         <img className='cardimg' alt='altro' src='/images/altro.png' />
                         <h2>Altro</h2>
+                        <div>
                             <p> <strong>GIORNALISTA MUSICALE</strong> indipendente dal 2011.  </p>
                             <br />
                             <p>Dal 2022 sono <strong>CAPOREDATTORE</strong> e webmaster del magazine online <b>Livore</b>, di cui sono anche articolista e occasionalmente grafico.</p>
                             <p><b>Qui</b> è possibile trovare l'elenco degli articoli che ho scritto nell'ultimo anno.</p>
                             <br />
-                            <p>Sono un appassionato di <b>UI/UX design</b>, soprattutto nel contesto videoludico.</p>
-                            <br />
-                            <p>Ho un gatto nero, si chiama <strong className="ingagas" onMouseOver={() => this.ingagas(true)} onMouseLeave={() => this.ingagas(false)}>INGAGAS</strong>, e tendenzialmente comanda lui.</p>
+                            <p>Sono un appassionato di <b>UI/UX design</b>, soprattutto nel contesto videoludico. Ho un gatto nero, si chiama <strong className="ingagas" onMouseOver={() => this.ingagas(true)} onMouseLeave={() => this.ingagas(false)}>INGAGAS</strong>, e tendenzialmente comanda lui.</p>
                             <img className={"ingimg" + this.state.ingagas} src="/images/ingagas.jpg"/>
+                        </div>
                         </div>
                     </Carousel>
                     </div>
