@@ -1,4 +1,5 @@
 import React from 'react';
+import { useRef } from 'react';
 import { easeOut, motion, spring } from "framer-motion"
 import { Link } from "react-router-dom"
 import "./Wordpress.scss"
@@ -80,34 +81,47 @@ class Wordpress extends React.Component {
 class Content extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {}
+        this.state = {
+            e: 0,
+            n: 0,
+            windowWidth: 0,
+            windowHeight: 0,
+        }
+        this.handleResize = this.handleResize.bind(this);
+    }
+
+    tilt(t) {
+        var e = -((this.state.windowWidth ) - (t.pageX / 9.5) + 330)
+        var n = ((this.state.windowHeight ) - (t.pageY / 30))
+        this.setState({e: e, n: n})
     }
 
     render() { 
         return (
             <div className="Wordpress-page-wrapper">
-            <div className='Wordpress-big-wrapper'>
-                <div className="Wordpress-header glass fade-in-fwd">
-                    <h1>Wordpress</h1>
-                </div>
-                <div className="Wordpress-small-wrapper">
-                    <div className="Livore-sito glass fade-in-top">
-                        <img className="livore-pic" alt="livore-pic" src="/images/livoremobile.png"/>
-                        <p>Sono il webmaster del magazine online <strong>Livore</strong></p>
-                        
+                <div className='Wordpress-big-wrapper top' onMouseMove={event => this.tilt(event)}>
+                    <div className="Wordpress-small-wrapper perspective">
+                        <div className="livore-images" style={{ 
+                            transform: `rotateY(${this.state.e}deg) rotateX(${this.state.n}deg)` 
+                            }}>
+                            <img className="livore-mobile" alt="livore-mobile" src="/images/livoremobile.png"/>
+                            <img className="livore-desktop" alt="livore-desktop" src="/images/livoredesktop.png"/>
+                            <img className="livore-logo" alt="livore-logo" src="/images/livorelogo.png"/>
+                        </div>
+                            <div className="livore-title">
+                            <h2><strong>Wordpress Webmaster</strong></h2>
+                            </div>
+                            <div className="Livore-text">
+                                <p>Plugin per Analytics</p>
+                                <p>Yoast SEO</p>
+                                <p>GDPR e Cookie consent</p>
+                                <p>Blocksy</p>
+                                <p>Elementor</p>
+                                <p>Stackable/Getwid/Spectra</p>
+                                <p>Woocommerce</p>
+                            </div>    
                     </div>
-                    <div className="Livore-articoli glass fade-in-top">
-                        <h3>Con quali strumenti ho lavorato:</h3>
-                        <p>Plugin per Analytics</p>
-                        <p>Yoast SEO</p>
-                        <p>GDPR e Cookie consent</p>
-                        <p>Blocksy</p>
-                        <p>Elementor</p>
-                        <p>Stackable/Getwid/Spectra</p>
-                        <p>Woocommerce</p>
                     </div>
-                </div>
-            </div>
             <div className='Wordpress-img-wrapper'>
                 <img className="Wordpress-img fade-in-fwd" src="images/sun.png" style={{ animationDelay: "0.8s" }}/>
                 <img className="Wordpress-img fade-in-fwd" src="images/twins.png" style={{ animationDelay: "1.2s" }}/>
@@ -118,6 +132,15 @@ class Content extends React.Component {
             </div>
             </div>
         )
+    }
+    
+    componentDidMount() {
+        this.handleResize();
+        window.addEventListener('resize', this.handleResize);
+    }
+
+    handleResize() {
+        this.setState({ windowWidth: window.innerWidth, windowHeight: window.innerHeight });
     }
 }
 
