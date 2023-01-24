@@ -86,62 +86,72 @@ class Content extends React.Component {
             n: 0,
             windowWidth: 0,
             windowHeight: 0,
+            Ready: false
         }
-        this.handleResize = this.handleResize.bind(this);
     }
 
     tilt(t) {
-        var e = -((this.state.windowWidth ) - (t.pageX / 9.5) + 330)
-        var n = ((this.state.windowHeight ) - (t.pageY / 30))
+        var e = -(20 + (this.state.windowWidth / 30) - (t.pageX / 30))
+        var n = ( 20 + (this.state.windowHeight / 2) - (t.pageY / 15))
         this.setState({e: e, n: n})
     }
+
+    HoverWrapper() {
+        return (
+            <div className="Wordpress-small-wrapper perspective">
+                            <div className="livore-images" style={{ 
+                                transform: `rotateY(${this.state.e}deg) rotateX(${this.state.n}deg)` 
+                                }}>
+                                <img className="livore-mobile" alt="livore-mobile" src="/images/livoremobile.png"/>
+                                <img className="livore-desktop" alt="livore-desktop" src="/images/livoredesktop.png"/>
+                                <img className="livore-logo" alt="livore-logo" src="/images/livorelogo.png"/>
+                            </div>
+                                <div className="livore-title">
+                                <h2><strong>Wordpress Webmaster</strong></h2>
+                                </div>
+                                <div className="Livore-text">
+                                    <p>Plugin per Analytics</p>
+                                    <p>Yoast SEO</p>
+                                    <p>GDPR e Cookie consent</p>
+                                    <p>Blocksy</p>
+                                    <p>Elementor</p>
+                                    <p>Stackable/Getwid/Spectra</p>
+                                    <p>Woocommerce</p>
+                                </div>    
+                        </div>
+        )
+    }
+    
 
     render() { 
         return (
             <div className="Wordpress-page-wrapper">
-                <div className='Wordpress-big-wrapper top' onMouseMove={event => this.tilt(event)}>
-                    <div className="Wordpress-small-wrapper perspective">
-                        <div className="livore-images" style={{ 
-                            transform: `rotateY(${this.state.e}deg) rotateX(${this.state.n}deg)` 
-                            }}>
-                            <img className="livore-mobile" alt="livore-mobile" src="/images/livoremobile.png"/>
-                            <img className="livore-desktop" alt="livore-desktop" src="/images/livoredesktop.png"/>
-                            <img className="livore-logo" alt="livore-logo" src="/images/livorelogo.png"/>
-                        </div>
-                            <div className="livore-title">
-                            <h2><strong>Wordpress Webmaster</strong></h2>
-                            </div>
-                            <div className="Livore-text">
-                                <p>Plugin per Analytics</p>
-                                <p>Yoast SEO</p>
-                                <p>GDPR e Cookie consent</p>
-                                <p>Blocksy</p>
-                                <p>Elementor</p>
-                                <p>Stackable/Getwid/Spectra</p>
-                                <p>Woocommerce</p>
-                            </div>    
-                    </div>
-                    </div>
-            <div className='Wordpress-img-wrapper'>
-                <img className="Wordpress-img fade-in-fwd" src="images/sun.png" style={{ animationDelay: "0.8s" }}/>
-                <img className="Wordpress-img fade-in-fwd" src="images/twins.png" style={{ animationDelay: "1.2s" }}/>
-                <img className="Wordpress-img fade-in-fwd" src="images/timber.png" style={{ animationDelay: "1.6s" }}/>
-                <img className="Wordpress-img fade-in-fwd" src="images/brittle.png" style={{ animationDelay: "2s" }}/>
-                <img className="Wordpress-img fade-in-fwd" src="images/giant.png" style={{ animationDelay: "2.4s" }}/>
-                <img className="Wordpress-img fade-in-fwd" src="images/bramble.png" style={{ animationDelay: "2.8s" }}/>
-            </div>
+                { this.state.Ready ? 
+                ( <div className='Wordpress-big-wrapper top' onMouseMove={event => this.tilt(event)}>
+                {this.HoverWrapper()}
+                </div>
+                ) 
+                : 
+                ( <div className='Wordpress-big-wrapper top'>
+                {this.HoverWrapper()}
+                </div> )
+                }  
+                <div className='Wordpress-img-wrapper'>
+                    <img className="Wordpress-img fade-in-fwd" src="images/sun.png" style={{ animationDelay: "0.8s" }}/>
+                    <img className="Wordpress-img fade-in-fwd" src="images/twins.png" style={{ animationDelay: "1.2s" }}/>
+                    <img className="Wordpress-img fade-in-fwd" src="images/timber.png" style={{ animationDelay: "1.6s" }}/>
+                    <img className="Wordpress-img fade-in-fwd" src="images/brittle.png" style={{ animationDelay: "2s" }}/>
+                    <img className="Wordpress-img fade-in-fwd" src="images/giant.png" style={{ animationDelay: "2.4s" }}/>
+                    <img className="Wordpress-img fade-in-fwd" src="images/bramble.png" style={{ animationDelay: "2.8s" }}/>
+                </div>
             </div>
         )
     }
     
     componentDidMount() {
-        this.handleResize();
-        window.addEventListener('resize', this.handleResize);
-    }
-
-    handleResize() {
-        this.setState({ windowWidth: window.innerWidth, windowHeight: window.innerHeight });
+        setTimeout(() => {this.setState({Ready: true})}, 800)
     }
 }
+
 
 export default Wordpress

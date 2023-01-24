@@ -11,6 +11,7 @@ class Splash extends React.Component {
         }
     }
 
+
     render() {
 
             return (
@@ -27,8 +28,7 @@ class Splash extends React.Component {
                     <motion.div 
                     key="Splash"
                     initial={{opacity: 1 }} 
-                    animate={{opacity: 1 }} 
-                    exit={{ opacity: 0, transform: "translateY(50%)" }}
+                    exit={{  filter: ["blur(0px)", "blur(20px)"], opacity: [1, 0] }}
                     transition={{ duration: 0.6, ease: easeIn, type: spring, delay: 0.3 }} 
                     className='Splash big-wrapper byebye'>
                             <Content />
@@ -53,7 +53,7 @@ class Content extends React.Component {
         if (this.props.previousPage === -1) return null
         else {
         return (
-            <h1>Hello, World!</h1>
+            <h1>Ciao!</h1>
         )
         }
     }

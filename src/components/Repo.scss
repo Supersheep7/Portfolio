@@ -76,7 +76,7 @@
   align-items: center;
   opacity: 1;
   padding: 0 30px 0px 30px;
-  text-shadow: 0px 0px 8px #df7b4f, 0px 0px 8px #df7b4f;
+  text-shadow: 0px 0px 3px #df7b4f, 0px 0px 3px #df7b4f, 0px 0px 3px #df7b4f;
 }
 
 .title p {
@@ -137,7 +137,8 @@
     height: 20vh;
     width: 100%;
     cursor: pointer;
-    text-shadow: 0px 0px 4px #df7b4f, 0px 0px 4px #df7b4f;
+    text-shadow: 0px 0px 3px #df7b4f, 0px 0px 3px #df7b4f, 0px 0px 3px #df7b4f;
+
 }
 
 .Github-wrapper > .Repo-child {
@@ -146,4 +147,5 @@
 
 .Github-wrapper img {
     height: 70%;
+    filter:drop-shadow(0 0 3px #df7b4f)
 }

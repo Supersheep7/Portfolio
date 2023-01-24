@@ -1,10 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch&family=Poppins&display=swap');
+
 .Wordpress-page-wrapper {
     position: fixed;
     background: url("../../public/images/Wordpress.jpg");
-    background-position-x: 0%;
-    background-size: 115%;
+    background-position-x: 5%;
+    background-size: 130%;
     background-repeat: no-repeat;
-    background-position-y: 30%;
+    background-position-y: 40%;
     width: 100%;
     height: 100%;
 }
@@ -79,7 +81,7 @@
   position: absolute;
   height: 33%;
   top: 20%;
-  left: 20%;
+  left: 25%;
   border-radius: 100%;
   opacity: 0.95;
   z-index: 1;
@@ -117,47 +119,107 @@
 
 .Livore-text p {
   position: absolute;
+  font-family: 'Cabin Sketch', cursive;
+  font-size: 1.5vw;
+  &:after {
+    opacity: 0.7;
+    -webkit-animation: fade-in 0.8s ease-in-out both;
+    animation: fade-in 0.8s ease-in-out both;
+    animation-delay: 1s;
+  }
 }
+
+
 
 .Livore-text p:first-child {    // Analytics
   top: 40px;
   left: 200px;
+  &:after {
+    content: url(../../public/images/freccia3.png);
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    transform: rotate(250deg);
+
+  }
 }
 
 .Livore-text p:nth-child(2) {   // Yoast
   bottom: 150px;
   left: 150px;
+  &:after {
+    content: url(../../public/images/freccia6.png);
+    position: absolute;
+    top: 0px;
+    left: 120px;
+    transform: rotate(100deg) rotateX(180deg)
+  }
 }
 
 .Livore-text p:nth-child(3) {   // GDPR
-  top: 400px;
-  right: 30px;
+  top: 100px;
+  right: 100px;
+  &:after {
+    content: url(../../public/images/freccia4.png);
+    position: absolute;
+    top: -140px;
+    right: 150px;
+    transform:  rotate(220deg) scale(0.8);
+  }
 }
 
 .Livore-text p:nth-child(4) {   // Blocksy
   bottom: 250px;
   left: 250px;
+  &:after {
+    content: url(../../public/images/freccia1.png);
+    position: absolute;
+    top: -22px;
+    left: 25px;
+    transform: scale(0.4);
+  }
 }
 
-.Livore-text p:nth-child(5) {   //
-  top: 100px;
-  right: 200px;
+.Livore-text p:nth-child(5) {   // Elementor
+  top: 400px;
+  right: 30px;
+  &:after {
+    content: url(../../public/images/freccia1.png);
+    position: absolute;
+    top: -50px;
+    right: 75px;
+    transform: rotate(200deg) scale(0.6);
+  }
 }
 
-.Livore-text p:nth-child(6) {
+.Livore-text p:nth-child(6) {   // STackable/Getwid/Spectra
   
   top: 250px;
   right: 100px;
-
+  &::after {
+    content: url(../../public/images/freccia6.png);
+    position: absolute;
+    top: -120px;
+    right: 200px;
+    transform: rotate(-80deg) rotateX(180deg) scale(0.7);
+  }
 }
 
-.Livore-text p:nth-child(7) {
+.Livore-text p:nth-child(7) {   // Woocommerce
   bottom: 80px;
   right: 150px;
+  &::after {
+    content: url(../../public/images/freccia7.png);
+    position: absolute;
+    top: -40px;
+    right: 150px;
+    transform: rotate(40deg) rotateX(180deg) scale(0.6);
+  }
 }
 
-h3 {
-  font-size: 1.1vw;
+h2 * {
+  font-size: 2.5vw;
+  font-family: 'Cabin Sketch', cursive;
   color: var(--accent)
 }
 
