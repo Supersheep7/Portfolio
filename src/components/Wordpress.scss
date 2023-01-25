@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch&family=Poppins&display=swap');
 
-.tablet-yes, .small-yes {
+.tablet-yes, .small-yes, .Wordpress-big-wrapper.mobile-yes {
   display: none;
 }
 
@@ -27,13 +27,12 @@
     align-items: center;
 }
 
-
 .Wordpress-small-wrapper {
     width: 100%;
     height: 100%;
     -webkit-animation: scale-up-center 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
     animation: scale-up-center 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-    animation-delay: 0.5s;
+    animation-delay: 0.8s;
  
 }
 
@@ -301,12 +300,17 @@ h2 * {
     position: static;
     transform: translateY(0%)
   }
+
+  .livore-title {
+    bottom: 0.5vw;
+  }
 }
 
 @media screen and (max-width: 945px) {  // tablet
   .small-none {
     display: none;
   }
+
   .Wordpress-page-wrapper {
     position: fixed;
     background: url("../../public/images/Wordpress.jpg");
@@ -315,20 +319,22 @@ h2 * {
     position: relative;
     width: 100%;
     height: 100%;
-}
-.Wordpress-big-wrapper {
-  top: -5%;
-  left: 0%;
-  width: 100vw;
-  height: 100vh;
-  margin: 0;
-  position: absolute;
-}
+  }
 
-.Wordpress-small-wrapper {
-  display: flex;
-  justify-content: center;
-}
+  .Wordpress-big-wrapper {
+    top: -5%;
+    left: 0%;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    position: absolute;
+  }
+
+  .Wordpress-small-wrapper {
+    display: flex;
+    justify-content: center;
+    
+  }
 
 .livore-images {
   top: 10%;
@@ -338,11 +344,11 @@ h2 * {
 }
 
 .livore-logo {
-  left: 24vw;
+  left: 20vw;
 }
 
 .livore-desktop {
-  right: 24vw;
+  right: 20vw;
 }
 
 .livore-title {
@@ -362,11 +368,58 @@ h2 * {
   width: 100%;
   bottom: 0;
   text-align: center; 
-  & p { font-family: 'Cabin Sketch', cursive; }
+  margin-right: 0;
+  & p { font-family: 'Cabin Sketch', cursive;
+        font-size: 16px }
 }
 
 }
 
 @media screen and (max-width: 550px) {  // mobile
+  .mobile-none {
+    display: none
+  }
 
+  .Wordpress-big-wrapper.mobile-yes {
+    display: block
+  }
+
+  .livore-title {
+    left: 0;
+    transform: translateX(0);
+    bottom: 100px;
+    text-align: center;
+    width: 100vw;
+  }
+  
+  .livore-title h2 * {
+    font-size: 30px;
+  }
+  
+  .Wordpress-small-wrapper .small-yes {
+    position: absolute;
+    width: 100%;
+    bottom: 40px;
+    text-align: center; 
+    margin: 0;
+    & p { font-family: 'Cabin Sketch', cursive;
+          font-size: 16px;
+          margin: 0 20px 0 20px;
+         }
+  }
+
+  .livore-images {
+    top: 12%;
+    height: 65%;
+    width: 100%;
+    position: relative
+  }
+
+  .livore-logo {
+    left: 15vw;
+  }
+
+  .livore-desktop {
+    right: 8vw;
+  }
 }

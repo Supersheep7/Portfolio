@@ -101,23 +101,23 @@ class Content extends React.Component {
                 <div className='Caverne-wrapper wrapper' onMouseEnter={() => this.hoverOn("caverne")} onMouseLeave={() => this.hoverOff("caverne")}>
                     <div className={"title hover" + this.state.open.includes("caverne")}  >
                     <h2>Caverne &amp; Viverne</h2>
-                    <p>Una web app fullstack per gestire schede di un gioco di ruolo homebrew con dice roller integrato, form per aggiornare il database e admin panel per il DM</p>
+                    <p>Una web app fullstack per gestire schede di un gioco di ruolo homebrew <span className='mobile-none'>con dice roller integrato, form per aggiornare il database e admin panel per il DM </span></p>
                     </div>
                     <div className={'Repo-child hover' + this.state.open.includes("caverne")}>
-                        <img alt='caverne' src='/images/caverne.png'/>
+                        <img className='mobile-none' alt='caverne' src='/images/caverne.png'/>
                         <img className="tablet-none" alt='caverne-dice' src='/images/caverne-dice.png'/>
-                        <img className="small-none" alt='caverne-mobile' src='/images/caverne-mobile.png'/>
+                        <img className="aruhara mobile-yes small-none" alt='caverne-mobile' src='/images/caverne-mobile.png'/>
                     </div>
                 </div>
                 <div className='Filemanager-wrapper wrapper' onMouseEnter={() => this.hoverOn("music")} onMouseLeave={() => this.hoverOff("music")}>
                 <div className={"title hover" + this.state.open.includes("music")}>  
                     <div><h2>Music Manager</h2></div>
-                    <div><p>Uno script programmato in python per organizzare i file musicali in cartelle Artist/Album</p></div>
+                    <div><p>Uno script <span className='mobile-none'>programmato in</span> python per organizzare i file musicali <span className='mobile-none'>in cartelle Artist/Album</span></p></div>
                 </div>
                     <div className={'Repo-child hover' + this.state.open.includes("music")}>
                         <img className="tablet-none" alt='pre-manager' src='/images/pre-manager.png'/>
-                        <img alt='music-filter' src='/images/music-filter.png'/>
-                        <img className="tablet-none" alt='post-manager' src='/images/post-manager.png'/>
+                        <img className="mobile-none" alt='music-filter' src='/images/music-filter.png'/>
+                        <img className="post-manager tablet-none mobile-yes" alt='post-manager' src='/images/post-manager.png'/>
                     </div>
                 </div>
                 <div className='Github-wrapper wrapper'>

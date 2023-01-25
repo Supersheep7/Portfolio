@@ -151,7 +151,7 @@ class Content extends React.Component {
                             </div>
                         </div>
                 <div className="name-and-social">
-                    <h1>Alessandro Corona Mendozza</h1>
+                    <h1>Alessandro Corona M<span className="mobile-none">endozza</span></h1>
                     <div className='social'>
                         <img alt='facebook' src="/images/facebook.png"/>
                         <img alt='instagram' src="/images/instagram.png"/>

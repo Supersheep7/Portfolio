@@ -66,7 +66,6 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  font-size: 2.2vw;
   transform: translate(-50%, -50%);
   height: 100%;
   width: 100%;
@@ -86,6 +85,7 @@
 }
 
 .title h2 {
+  font-size: 36px;
   margin: 0;
 }
 
@@ -167,6 +167,7 @@
   .small-none {
     display: none;
   }
+
   h1, .title h2 {
     font-size: calc(16px + 2vw)
   }
@@ -185,6 +186,32 @@
   }
 }
 
-@media screen and (max-width: 450px) {  // mobile
+@media screen and (max-width: 550px) {  // mobile
+  .mobile-none {
+    display: none
+  }
+  h1, .title h2 {
+    font-size: calc(16px + 2vw);
+    text-align: center
+  }
 
+  .title {
+    justify-content: space-evenly;
+  }
+
+  img.mobile-yes {
+    display: block;
+  }
+
+  .aruhara.mobile-yes {
+    max-height: 400px;
+    height: auto;
+    width: 150px;
+  }
+
+  .post-manager.mobile-yes {
+    max-height: 400px;
+    height: auto;
+    width: 250px;
+  }
 }
