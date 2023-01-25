@@ -92,9 +92,9 @@ function HoverWrapper(props) {
                             <h2><strong>Wordpress Webmaster</strong></h2>
                             </div>
                             <div className="small-none Livore-text tablet-none">
-                                <p>Plugin per Analytics</p>
+                                <p>Analytics</p>
                                 <p>Yoast SEO</p>
-                                <p>GDPR e Cookie consent</p>
+                                <p>GDPR/Cookie consent</p>
                                 <p>Blocksy</p>
                                 <p>Elementor</p>
                                 <p>Stackable/Getwid/Spectra</p>

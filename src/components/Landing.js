@@ -31,7 +31,7 @@ class Landing extends React.Component {
                 transition={{ x: {duration: 0.8, ease: easeOut, type: spring} }} 
                 exit={{x: 0 }}
                 className='Landing big-wrapper'>
-                    <Content delayed="0"/>
+                    <Content language={this.props.language} delayed="0"/>
                 </motion.div>
                 <Link to={`/${(this.state.thisPage + 1) % 4}`} onClick={() => this.props.goHandleClick(this.state.thisPage)}>                    
                     <div className='switch-wrapper switch-right'>
@@ -62,7 +62,7 @@ class Landing extends React.Component {
                     transition={{ x: {duration: 0.8, ease: easeOut, type: spring} }} 
                     exit={{x: 0 }}
                     className='Landing big-wrapper'>
-                        <Content delayed="1"/>
+                        <Content language={this.props.language} delayed="1"/>
                     </motion.div>
                     <Link to={`/${(this.state.thisPage + 1) % 4}`} onClick={() => this.props.goHandleClick(this.state.thisPage)}>                    
                         <div className='switch-wrapper switch-right'>
@@ -93,7 +93,7 @@ class Landing extends React.Component {
             transition={{ x: {duration: 0.8, ease: easeOut, type: spring} }} 
             exit={{x: 0 }}
             className='Landing big-wrapper'>
-                <Content delayed="0"/>
+                <Content language={this.props.language} delayed="0"/>
             </motion.div>
             <Link to={`/${(this.state.thisPage + 1) % 4}`} onClick={() => this.props.goHandleClick(this.state.thisPage)}>                    
                 <div className='switch-wrapper switch-right'>
@@ -132,14 +132,14 @@ class Content extends React.Component {
                         </div>
                     <div className='Bio glass'>
                         <p>Alessandro Corona Mendozza</p>
-                        <p>Bologna, via dei Bibiena 6</p>
-                        <p>+39 339 545 2982</p>
-                        <p>alessandro.corona.m@gmail.com</p>
+                        <a target="_blank" href="https://goo.gl/maps/CNXmcxY2PKg13dMW6"><p>Bologna, via dei Bibiena 6</p></a>
+                        <a target="_blank" href="tel:+39-339-545-2982"><p>+39 339 545 2982</p></a>
+                        <a target="_blank" href="mailto:alessandro.corona.m@gmail.com"><p>alessandro.corona.m@gmail.com</p></a>
                         <p>22/12/1993</p>
                         <div className='social'>
-                            <img alt='facebook' src="/images/facebook.png"/>
-                            <img alt='instagram' src="/images/instagram.png"/>
-                            <img alt='telegram' src="/images/telegram.png"/>
+                            <a target="_blank" href="https://www.facebook.com/alessandrocoronam/"><img alt='facebook' src="/images/facebook.png"/></a>
+                            <a target="_blank" href="https://www.instagram.com/blindflotnr/"><img alt='instagram' src="/images/instagram.png"/></a>
+                            <a target="_blank" href="https://t.me/panarchico"><img alt='telegram' src="/images/telegram.png"/></a>
                         </div>
                     </div>
                 </div>
@@ -153,37 +153,35 @@ class Content extends React.Component {
                 <div className="name-and-social">
                     <h1>Alessandro Corona M<span className="mobile-none">endozza</span></h1>
                     <div className='social'>
-                        <img alt='facebook' src="/images/facebook.png"/>
-                        <img alt='instagram' src="/images/instagram.png"/>
-                        <img alt='mail' src="/images/mail.png"/>
-                        <img alt='phone' src="/images/telephone.png"/>
+                    <a target="_blank" href="https://www.facebook.com/alessandrocoronam/"><img alt='facebook' src="/images/facebook.png"/></a>
+                    <a target="_blank" href="https://www.instagram.com/blindflotnr/"><img alt='instagram' src="/images/instagram.png"/></a>
+                    <a target="_blank" href="mailto:alessandro.corona.m@gmail.com"><img alt='mail' src="/images/mail.png"/></a>
+                    <a target="_blank" href="tel:+39-339-545-2982"><img alt='phone' src="/images/telephone.png"/></a>
                     </div>
                 </div>
                 </div>
                 <div className="Landing-big-content glass swing-in-top-fwd" style={{ animationDelay: this.props.delayed*1000 + 500 + "ms" }}>
                     <div className="about-wrapper">
-                    <p>Ciao, sono Alessandro, uno <strong>sviluppatore web</strong> autodidatta. </p>
-                       <p>Per maturare le mie prime competenze ho studiato i curriculum online di <strong>W3</strong>, <strong>CS50</strong>, <strong>freecodecamp</strong>, <strong>The Odin Project</strong>.</p>
-                       <p>Finora ho lavorato in <strong>MERN</strong> stack per costruire web app scalabili con framework leggeri senza rinunciare ad usare React, la mia scelta per il frontend.</p>
-                       <span className='tablet-none'><p>Implemento vanillaJS e jQuery laddove necessario; so scrivere in python e realizzare app su django/flask. Ho una buona comprensione generale dei database relazionali, anche se non li ho mai usati in un progetto personale.</p>
-                    </span></div>
-                    </div> 
+                    {this.props.language === "english" && Eng()}
+                    {this.props.language === "italiano" && Ita()}
+                    </div>
+                </div> 
                 <div className="Competences-wrapper"> 
                     <div className="Stack glass swing-in-top-fwd" style={{ animationDelay: this.props.delayed*1000 + 2500 + "ms" }}>
-                        <img className='mongodb' alt='mongodb' src="/images/mongodb.png"/>    
-                        <img className='express' alt='express' src="/images/express.png"/>    
-                        <img className='react' alt='react' src="/images/react.png"/>    
-                        <img className='node' alt='node' src="/images/node.png"/>        
+                        <a target="_blank" href="https://www.mongodb.com/"><img className='mongodb' alt='mongodb' src="/images/mongodb.png"/></a>   
+                        <a target="_blank" href="https://expressjs.com/"><img className='express' alt='express' src="/images/express.png"/></a>
+                        <a target="_blank" href="https://reactjs.org/"><img className='react' alt='react' src="/images/react.png"/></a>    
+                        <a target="_blank" href="https://nodejs.org/en/"><img className='node' alt='node' src="/images/node.png"/></a>       
                     </div> 
                     <div className="Small-competences-wrapper"> 
-                        <Glass n="1" delayed={this.props.delayed} className='js'/>
-                        <Glass n="2" delayed={this.props.delayed} className='jquery'/>
-                        <Glass n="3" delayed={this.props.delayed} className='redux'/>
-                        <Glass n="4" delayed={this.props.delayed} className='sass'/>
-                        <Glass n="5" delayed={this.props.delayed} className='python'/>
-                        <Glass n="6" delayed={this.props.delayed} className='django'/>
-                        <Glass n="7" delayed={this.props.delayed} className='postgresql'/>
-                        <Glass n="8" delayed={this.props.delayed} className='mysql'/>
+                        <a target="_blank" href="https://www.javascript.com/"><Glass n="1" delayed={this.props.delayed} className='js'/></a>
+                        <a target="_blank" href="https://jquery.com/"><Glass n="2" delayed={this.props.delayed} className='jquery'/></a>
+                        <a target="_blank" href="https://redux.js.org/"><Glass n="3" delayed={this.props.delayed} className='redux'/></a>
+                        <a target="_blank" href="https://sass-lang.com/"><Glass n="4" delayed={this.props.delayed} className='sass'/></a>
+                        <a target="_blank" href="https://www.python.org/"><Glass n="5" delayed={this.props.delayed} className='python'/></a>
+                        <a target="_blank" href="https://www.djangoproject.com/"><Glass n="6" delayed={this.props.delayed} className='django'/></a>
+                        <a target="_blank" href="https://www.postgresql.org/"><Glass n="7" delayed={this.props.delayed} className='postgresql'/></a>
+                        <a target="_blank" href="https://www.mysql.com/"><Glass n="8" delayed={this.props.delayed} className='mysql'/></a>
                     </div> 
                 </div> 
             </div>
@@ -193,6 +191,28 @@ class Content extends React.Component {
             </motion.div>
         )
     }
+}
+
+function Eng() {
+    return (
+        <div>
+            <p>Hello, I'm Alessandro, a self-taught <strong>web developer</strong>.</p>
+            <p>My current expertise stems from the online classes at <strong>W3</strong>, <strong>CS50</strong>, <strong>freecodecamp</strong>, <strong>The Odin Project</strong>.</p>
+            <p>So far I worked with a <strong>MERN</strong> stack. I think it's a good choice for building scalable web apps on a lightweight framework consistent with React, which is my main tool on the front end.</p>
+            <span className='tablet-none'><p>I can work with vanillaJS and jQuery (if required) and develop apps via python in a django/flask environment. I've got a good grasp on relational databases, yet I never used one in a personal project.</p></span>
+        </div>
+    )
+}
+function Ita() {
+    return (
+        <div>
+          <p>Ciao, sono Alessandro, uno <strong>sviluppatore web</strong> autodidatta. </p>
+                       <p>Per maturare le mie prime competenze ho studiato i curriculum online di <strong>W3</strong>, <strong>CS50</strong>, <strong>freecodecamp</strong>, <strong>The Odin Project</strong>.</p>
+                       <p>Finora ho lavorato in <strong>MERN</strong> stack per costruire web app scalabili con framework leggeri senza rinunciare ad usare React, la mia scelta per il frontend.</p>
+                       <span className='tablet-none'><p>Implemento vanillaJS e jQuery laddove necessario; so scrivere in python e realizzare app su django/flask. Ho una buona comprensione generale dei database relazionali, anche se non li ho mai usati in un progetto personale.</p>
+                    </span>
+        </div>        
+    )
 }
 
 function Glass(props) {

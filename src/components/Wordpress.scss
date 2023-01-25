@@ -138,12 +138,12 @@
 
 .Livore-text p:first-child {    // Analytics
   top: 40px;
-  left: 10vw;
+  left: 13vw;
   &:after {
     content: url(../../public/images/freccia3.png);
     position: absolute;
     top: 40px;
-    left: 2vw;
+    left: 0vw;
     transform: rotate(250deg);
 
   }

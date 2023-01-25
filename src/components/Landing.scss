@@ -143,7 +143,7 @@ p {
     justify-items: center;
 }
 
-.Small-competences-wrapper > * {
+.Small-competences-wrapper > a > * {
     width: 7.5vw;
     height: 7.5vw;
     margin: 1vw;
@@ -235,7 +235,7 @@ p {
         min-height: 60px;
         min-width: 60px;
     }
-    .Small-competences-wrapper > * {
+    .Small-competences-wrapper > a > * {
         min-height: 78px;
         min-width: 78px;
         & img {
@@ -250,7 +250,7 @@ p {
     .mobile-none {
         display: none
     }
-    .Small-competences-wrapper > * {
+    .Small-competences-wrapper > a > * {
         min-height: 70px;
         min-width: 65px;
         margin: 0;

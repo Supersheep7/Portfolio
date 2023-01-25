@@ -141,8 +141,13 @@
 
 }
 
-.Github-wrapper > .Repo-child {
+.Github-wrapper > a > .Repo-child {
   justify-content: space-evenly;
+  flex-direction: row-reverse;
+}
+
+a {
+  text-decoration: none;
 }
 
 .Github-wrapper img {

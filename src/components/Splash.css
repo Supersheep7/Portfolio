@@ -19,3 +19,29 @@
         }
       }
       
+.lang-wrapper {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+}
+
+.lang-wrapper img {
+  border-radius: 100%;
+  width: 100px;
+}
+
+
+.Splash h1 {
+  font-size: calc(100px + 5vw);
+  margin: 20px;
+}
+
+.splash-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.lang-wrapper img:hover {
+  filter: drop-shadow(0 0 4px  var(--accent)) drop-shadow(0 0 4px  var(--accent)) drop-shadow(0 0 4px  var(--accent))
+}

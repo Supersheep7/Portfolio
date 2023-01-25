@@ -13,11 +13,11 @@ function AnimatedRoutes(props) {
         return (
         <AnimatePresence>
                 <Routes location={location} key={location.pathname}>
-                    <Route path="/" element={<Splash whatPage={props.whatPage} previousPage={props.previousPage} goHandleClick={props.goHandleClick}/>} key="splash"/>
-                    <Route path="/0" element={<Landing whatPage={props.whatPage} previousPage={props.previousPage} goHandleClick={props.goHandleClick}/>} key="landing"/>
-                    <Route path="/1" element={<Repo  whatPage={props.whatPage} previousPage={props.previousPage} goHandleClick={props.goHandleClick}/>} key="repo"/>
-                    <Route path="/2" element={<Wordpress whatPage={props.whatPage} previousPage={props.previousPage} goHandleClick={props.goHandleClick} key="wordpress"/>}/>
-                    <Route path="/3" element={<Etc whatPage={props.whatPage} previousPage={props.previousPage} goHandleClick={props.goHandleClick}/>} key="etc"/>
+                    <Route path="/" element={<Splash langHandleClick={props.langHandleClick} whatPage={props.whatPage} previousPage={props.previousPage} goHandleClick={props.goHandleClick}/>} key="splash"/>
+                    <Route path="/0" element={<Landing language={props.language} whatPage={props.whatPage} previousPage={props.previousPage} goHandleClick={props.goHandleClick}/>} key="landing"/>
+                    <Route path="/1" element={<Repo language={props.language}  whatPage={props.whatPage} previousPage={props.previousPage} goHandleClick={props.goHandleClick}/>} key="repo"/>
+                    <Route path="/2"  element={<Wordpress language={props.language} whatPage={props.whatPage} previousPage={props.previousPage} goHandleClick={props.goHandleClick} key="wordpress"/>}/>
+                    <Route path="/3"  element={<Etc language={props.language} whatPage={props.whatPage} previousPage={props.previousPage} goHandleClick={props.goHandleClick}/>} key="etc"/>
                 </Routes>
         </AnimatePresence>
         )
