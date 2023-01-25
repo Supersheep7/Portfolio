@@ -159,9 +159,9 @@ function Eng(props) {
         <div>
             <h2>College</h2>
             <div>
-            <p>I'm a <strong>PHILOSOPHY</strong> graduate from Bologna's <b><a target="_blank" href="https://www.unibo.it/">Alma Mater Studiorum</a></b>, focusing mainly on epistemology (philosophy of science, mind, knowledge, language and logic).</p> 
+            <p>I'm a <b>PHILOSOPHY</b> graduate from Bologna's <a target="_blank" href="https://www.unibo.it/"><strong>Alma Mater Studiorum</strong></a>, focusing mainly on epistemology (philosophy of science, mind, knowledge, language and logic).</p> 
                 <br />
-                    <p>I kept studying philosphy until 2020 and I'm still significantly passionate about the subject. As an Alma Mater alumnus I was a <strong>SPEAKER</strong> for many seminars concerning bibliographical research, political philosophy, industry 4.0 and musical journalism.</p> 
+                    <p>I kept studying philosphy until 2020 and I'm still significantly passionate about the subject. As an Alma Mater alumnus I was a <b>SPEAKER</b> for many seminars concerning bibliographical research, political philosophy, industry 4.0 and musical journalism.</p> 
             </div>    
         </div>    
                             )
@@ -172,10 +172,10 @@ function Eng(props) {
             <div>
                 <h2>Work</h2>
                     <div>
-                        <p> I worked as a <strong>DIGITAL PROMOTER</strong> in Bologna's <b><a target="_blank" href="https://www.bo.camcom.gov.it/it/about-us/chamber-commerce-bologna">chamber of commerce</a></b>. 
+                        <p> I worked as a <b>DIGITAL PROMOTER</b> in Bologna's <a target="_blank" href="https://www.bo.camcom.gov.it/it/about-us/chamber-commerce-bologna"><strong>chamber of commerce</strong></a>. 
                         My team took care of assessments and support for european public tenders in the industry 4.0 framework.</p>
                         <br />
-                        <p>During 2020 I worked as a freelance <strong>EVENT ASSISTANT</strong>, an IT consultant and video editor for Zoom/GTW webinars.</p>
+                        <p>During 2020 I worked as a freelance <b>EVENT ASSISTANT</b>, an IT consultant and video editor for Zoom/GTW webinars.</p>
                     </div>
             </div>
             )
@@ -186,9 +186,9 @@ function Eng(props) {
             <div>
                 <h2>Network</h2>
                     <div>
-                        <p>Currently a <strong>MEMBER</strong> of Alma Mater Studiorum's Alumni network <b><a target="_blank" href="https://www.linkedin.com/company/vivat-academia/">'Vivat Academia'</a></b>. I also worked in its 'Scholarships' team, a task force meant to collect company funds for university students in need.</p>
+                        <p>Currently a <b>MEMBER</b> of Alma Mater Studiorum's Alumni network <a target="_blank" href="https://www.linkedin.com/company/vivat-academia/"><strong>'Vivat Academia'</strong></a>. I also worked in its 'Scholarships' team, a task force meant to collect funds for university students in need from various businesses</p>
                         <br />
-                        <p>I was for 4 years the <strong>LEADER</strong> of Alma Mater's student society <b><a target="_blank" href="https://www.facebook.com/SVQFO/">S.V.Q.F.O.</a></b> It was a complex and colourful growth experience, which taught me a lot about team management, public fund accountability, major event planning and PR with academia and local authorities.</p>  
+                        <p>I was for 4 years the <b>LEADER</b> of Alma Mater's student society <a target="_blank" href="https://www.facebook.com/SVQFO/"><strong>S.V.Q.F.O.</strong></a> It was a complex and colourful growth experience, which taught me a lot about team management, public fund accountability, major event planning and PR with academia and local authorities.</p>  
                     </div>
             </div>
         )
@@ -199,10 +199,10 @@ function Eng(props) {
             <div>
                 <h2>Etc</h2>
                     <div>
-                        <p>I'm an independent <strong>MUSICAL JOURNALIST</strong> since 2011.</p>
+                        <p>I'm an independent <b>MUSICAL JOURNALIST</b> since 2011.</p>
                         <br />
-                        <p>I'm <strong>CHIEF EDITOR</strong> and webmaster for <b><a target="_blank" href="https://www.livore.it/">Livore</a></b>. I'm also a top columnist of the webzine and, occasionally, a graphic designer.</p>
-                        <p><b><a target="_blank" href="https://www.livore.it/author/wp_13976739/">Here</a></b> you can find all my writings as a journalist. Unfortunately, they're only in Italian.</p>
+                        <p>I'm <b>CHIEF EDITOR</b> and webmaster for <a target="_blank" href="https://www.livore.it/"><strong>Livore</strong></a>. I'm also one of the top columnists of the webzine and, occasionally, a graphic designer.</p>
+                        <p><a target="_blank" href="https://www.livore.it/author/wp_13976739/"><strong>Here</strong></a> you can find all my writings as a journalist. Unfortunately, they're only in Italian.</p>
                         <br />
                         <p>I'm an <b>UI/UX design</b> enthusiast, especially in videogames. I'm a cat's human, his name is <strong className="ingagas" onMouseOver={() => props.ingagasPeekabo(true)} onMouseLeave={() => props.ingagasPeekabo(false)}>INGAGAS</strong>, and he's basically my boss.</p>
                         <img className={"ingimg" + props.ingagas} src="/images/ingagas.jpg"/>
@@ -221,9 +221,9 @@ function Ita(props) {
         <div>
        <h2>Formazione</h2>
                             <div>
-                            <p>Mi sono laureato in <strong>FILOSOFIA</strong> all'<b><a target="_blank" href="https://www.unibo.it/it">Alma Mater Studiorum</a></b> nel 2016, con un orientamento curricolare di stampo epistemologico (Filosofia della scienza, della mente, della conoscenza, del linguaggio e logica).</p> 
+                            <p>Mi sono laureato in <b>FILOSOFIA</b> all'<a target="_blank" href="https://www.unibo.it/it"><strong>Alma Mater Studiorum</strong></a> nel 2016, con un orientamento curricolare di stampo epistemologico (Filosofia della scienza, della mente, della conoscenza, del linguaggio e logica).</p> 
                                 <br />
-                                <p>Ho continuato a studiare Filosofia fino al 2020 e la materia rimane tuttora uno dei miei principali interessi. Come ex studente Alma Mater ho avuto l'occasione di fare da <strong>RELATORE</strong> per svariati seminari sui temi della ricerca bibliografica, della filosofia politica, dell'impresa digitale e del giornalismo musicale. </p> 
+                                <p>Ho continuato a studiare Filosofia fino al 2020 e la materia rimane tuttora uno dei miei principali interessi. Come ex studente Alma Mater ho avuto l'occasione di fare da <b>RELATORE</b> per svariati seminari sui temi della ricerca bibliografica, della filosofia politica, dell'impresa digitale e del giornalismo musicale. </p> 
                             </div>
  
         </div>    
@@ -235,10 +235,10 @@ function Ita(props) {
             <div>
  <h2>Professione</h2>
                         <div>
-                            <p> Dal 2019 al 2021 ho lavorato come <strong>DIGITAL PROMOTER</strong> in <b><a target="_blank" href="https://www.bo.camcom.gov.it/">Camera di Commercio</a></b> di Bologna nel team <b><a href="https://www.puntoimpresadigitale.camcom.it/">Punto Impresa Digitale</a></b>. 
+                            <p> Dal 2019 al 2021 ho lavorato come <b>DIGITAL PROMOTER</b> in <a target="_blank" href="https://www.bo.camcom.gov.it/"><strong>Camera di Commercio</strong></a> di Bologna nel team <a href="https://www.puntoimpresadigitale.camcom.it/"><strong>Punto Impresa Digitale</strong></a>. 
                             Il team si occupava di fornire valutazioni e assistenza per bandi europei nel quadro della transizione I4.0. Nello stesso periodo ho inoltre lavorato come RAO per emissione CNS.</p>
                             <br />
-                            <p>Nel 2020 sono stato <strong>EVENT ASSISTANT</strong> freelance per webinar ECM in medicina, con un ruolo di assistenza tecnica, formazione e montaggio.</p>
+                            <p>Nel 2020 sono stato <b>EVENT ASSISTANT</b> freelance per webinar ECM in medicina, con un ruolo di assistenza tecnica, formazione e montaggio.</p>
                         </div>
             </div>
             )
@@ -262,10 +262,10 @@ function Ita(props) {
             <div>
                         <h2>Altro</h2>
                         <div>
-                            <p> <strong>GIORNALISTA MUSICALE</strong> indipendente dal 2011.  </p>
+                            <p> <b>GIORNALISTA MUSICALE</b> indipendente dal 2011.  </p>
                             <br />
-                            <p>Dal 2022 sono <strong>CAPOREDATTORE</strong> e webmaster del magazine online <b><a target="_blank" href="https://www.livore.it/">Livore</a></b>, di cui sono anche articolista e occasionalmente grafico.</p>
-                            <p><b><a target="_blank" href="https://www.livore.it/author/wp_13976739/">Qui</a></b> è possibile trovare l'elenco degli articoli che ho scritto nell'ultimo anno.</p>
+                            <p>Dal 2022 sono <b>CAPOREDATTORE</b> e webmaster del magazine online <a target="_blank" href="https://www.livore.it/"><strong>Livore</strong></a>, di cui sono anche articolista e occasionalmente grafico.</p>
+                            <p><a target="_blank" href="https://www.livore.it/author/wp_13976739/"><strong>Qui</strong></a> è possibile trovare l'elenco degli articoli che ho scritto nell'ultimo anno.</p>
                             <br />
                             <p>Sono un appassionato di <b>UI/UX design</b>, soprattutto nel contesto videoludico. Ho un gatto nero, si chiama <strong className="ingagas" onMouseOver={() => props.ingagasPeekabo(true)} onMouseLeave={() => props.ingagasPeekabo(false)}>INGAGAS</strong>, e tendenzialmente comanda lui.</p>
                             <img className={"ingimg" + props.ingagas} src="/images/ingagas.jpg"/>

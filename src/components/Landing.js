@@ -197,7 +197,7 @@ function Eng() {
     return (
         <div>
             <p>Hello, I'm Alessandro, a self-taught <strong>web developer</strong>.</p>
-            <p>My current expertise stems from the online classes at <strong>W3</strong>, <strong>CS50</strong>, <strong>freecodecamp</strong>, <strong>The Odin Project</strong>.</p>
+            <p>My current expertise stems from the online classes at <a target="_blank" href="https://www.w3schools.com/"><strong>W3</strong></a>, <a href="https://www.edx.org/course/cs50s-web-programming-with-python-and-javascript?index=product&amp;queryID=95a3a09fb915fb3aad078e940337c9a3&amp;position=3"><strong>CS50</strong></a>, <a target="_blank" href="https://www.freecodecamp.org/"><strong>freecodecamp</strong></a>, <a target="_blank" href="https://www.theodinproject.com/"><strong>The Odin Project</strong></a>.</p>
             <p>So far I worked with a <strong>MERN</strong> stack. I think it's a good choice for building scalable web apps on a lightweight framework consistent with React, which is my main tool on the front end.</p>
             <span className='tablet-none'><p>I can work with vanillaJS and jQuery (if required) and develop apps via python in a django/flask environment. I've got a good grasp on relational databases, yet I never used one in a personal project.</p></span>
         </div>
@@ -207,7 +207,7 @@ function Ita() {
     return (
         <div>
           <p>Ciao, sono Alessandro, uno <strong>sviluppatore web</strong> autodidatta. </p>
-                       <p>Per maturare le mie prime competenze ho studiato i curriculum online di <strong>W3</strong>, <strong>CS50</strong>, <strong>freecodecamp</strong>, <strong>The Odin Project</strong>.</p>
+                       <p>Per maturare le mie prime competenze ho studiato i curriculum online di <a target="_blank" href="https://www.w3schools.com/"><strong>W3</strong></a>, <a href="https://www.edx.org/course/cs50s-web-programming-with-python-and-javascript?index=product&amp;queryID=95a3a09fb915fb3aad078e940337c9a3&amp;position=3"><strong>CS50</strong></a>, <a target="_blank" href="https://www.freecodecamp.org/"><strong>freecodecamp</strong></a>, <a target="_blank" href="https://www.theodinproject.com/"><strong>The Odin Project</strong></a>.</p>
                        <p>Finora ho lavorato in <strong>MERN</strong> stack per costruire web app scalabili con framework leggeri senza rinunciare ad usare React, la mia scelta per il frontend.</p>
                        <span className='tablet-none'><p>Implemento vanillaJS e jQuery laddove necessario; so scrivere in python e realizzare app su django/flask. Ho una buona comprensione generale dei database relazionali, anche se non li ho mai usati in un progetto personale.</p>
                     </span>
