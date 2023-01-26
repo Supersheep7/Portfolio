@@ -15,17 +15,6 @@ class Landing extends React.Component {
         }
     }
 
-    preloadImages()
-    {
-    var img1 = new Image();
-    var img2 = new Image();
-    var img3 = new Image();
-    var img4 = new Image();
-    img1.src = "/images/Landing.jpg";
-    img2.src = "/images/elk.jpg";
-    img3.src = "/images/Wordpress.jpg";
-    img4.src = "/images/night.jpg";
-    }
 
     Touch() {
         return ( 'ontouchstart' in window ) ||
@@ -184,9 +173,6 @@ class Landing extends React.Component {
     )
     }
 
-    componentDidMount() {
-        this.preloadImages()
-    }
 }
 
 class Content extends React.Component {
