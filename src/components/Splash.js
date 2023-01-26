@@ -7,37 +7,52 @@ class Splash extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            thisPage: -1
+            thisPage: -1,
+            windowWidth: window.innerWidth
         }
+        this.updateSize = this.updateSize.bind(this);
     }
 
+    updateSize() {
+        this.setState({windowWidth: window.innerWidth});
+      }
+
+    Touch() {
+        return ( 'ontouchstart' in window ) ||
+               ( navigator.maxTouchPoints > 0 ) ||
+               ( navigator.msMaxTouchPoints > 0 );
+    }
 
     render() {
 
             return (
-                
-                    
-                <motion.div 
+            <div>
+            {this.Touch() === false ? 
+            (<motion.div 
                 key="Splash"
                 initial={{opacity: 1 }} 
                 animate={{opacity: 1 }} 
                 exit={{ height: 0, bottom: "50%"}}
-                transition={{ duration: 0.8, ease: easeOut, type: spring, delay: 1 }} 
+                transition={{ duration: 0.8, ease: easeOut,  delay: 1 }} 
                 className='Splash big-wrapper'>
-                    
                     <motion.div 
                     key="Splash"
                     initial={{opacity: 1 }} 
                     exit={{  filter: ["blur(0px)", "blur(20px)"], opacity: [1, 0] }}
-                    transition={{ duration: 0.6, ease: easeIn, type: spring, delay: 0.3 }} 
+                    transition={{ duration: 0.6, ease: easeIn, delay: 0.3 }} 
                     className='Splash big-wrapper byebye'>
                             <Content langHandleClick={this.props.langHandleClick}/>
-                        
                     </motion.div>
-                </motion.div>
-                
+                </motion.div>) :
+            (<div className="Splash big-wrapper"><Content langHandleClick={this.props.langHandleClick}/></div>)
+            }
+            </div>
                )
      }
+
+    componentDidMount() {
+    window.addEventListener("resize", this.updateSize);
+    }
 }
 
 class Content extends React.Component {

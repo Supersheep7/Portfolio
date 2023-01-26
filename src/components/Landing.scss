@@ -6,7 +6,7 @@
     position: relative;
     width: 100vw;
     height: 100vh;
-    background: url("../../public/images/Landing.png");
+    background: url("../../public/images/Landing.jpg");
     background-size: cover;
     background-position: center;
 }
@@ -247,16 +247,64 @@ p {
 }
 
 @media screen and (max-width: 550px) {  /* mobile */
+
     .mobile-none {
         display: none
     }
+
+    .Landing-right {
+        height: 100%;
+        justify-content: center;
+        margin-top: -30px;
+    }
+
+    div {
+        position: static;
+    }
+
+    .Landing-content-wrapper {
+        height: 100vh;
+        margin: 0;
+    }
+
+    .Landing-content-wrapper > * > * {
+        margin: 20px;    
+    }
+    
+    .Competences-wrapper {
+        margin-top: -20px;
+        justify-content: space-evenly;
+        height: auto;
+    }
+
+    .Bio.small-yes {
+        height: auto;
+    }
+
+    .Landing-big-content {
+        height: auto;
+    }
+
+    .Small-competences-wrapper {
+        height: auto;
+    }
+
+    .Stack {
+        height: auto;
+        padding: 10px 0 10px 0;
+    }
+
     .Small-competences-wrapper > a > * {
         min-height: 70px;
         min-width: 65px;
-        margin: 0;
+        margin: 5px 0 5px 0;
         & img {
-            min-height: 45px;
-            min-width: 45px
+            min-height: 42px;
+            min-width: 42px
         }
+    }
+
+    .Landing-content-wrapper .swipe-wrapper {
+        width: 100%;
     }
 }

@@ -8,70 +8,127 @@ class Wordpress extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            thisPage: 2
+            thisPage: 2,
+            out: false,
+            navLeftOpacity: 0.3,
+            navRightOpacity: 0.3,
+            touchPosition: null
         }
+    }
+
+    Touch() {
+        return ( 'ontouchstart' in window ) ||
+               ( navigator.maxTouchPoints > 0 ) ||
+               ( navigator.msMaxTouchPoints > 0 );
+    }
+
+    handleTouchStart = (e) => {
+        const touchDown = e.touches[0].clientX
+        this.setState({touchPosition: touchDown})
+    }
+
+    handleTouchMove = (e) => {
+        const touchDown = this.state.touchPosition
+        const linkRight = document.getElementById("link-right")
+        const linkLeft = document.getElementById("link-left")
+    
+        if(touchDown === null) {
+            return
+        }
+    
+        const currentTouch = e.touches[0].clientX
+        const diff = touchDown - currentTouch
+    
+        if (diff > 5) {
+            linkRight.click()
+        }
+    
+        if (diff < -5) {
+            linkLeft.click()
+        }
+    
+        this.setState({touchPosition: null})
+    }
+
+    handleNavClick() {
+        this.props.goHandleClick(this.state.thisPage);
+        this.setState({out: true})
+    }
+
+    handleOpacity(direction, n) {
+        if (direction === "left") {
+            this.setState({navLeftOpacity: n})
+        }
+        else if (direction === "right") {
+            this.setState({navRightOpacity: n})
+        }
+        else return null
     }
 
     render() {
 
 
         if (this.props.previousPage > this.state.thisPage) return (
-            <div>
-                <Link to={`/${(this.state.thisPage - 1)}`} onClick={() => this.props.goHandleClick(this.state.thisPage)}>
-                    <div className='switch-wrapper switch-left'>  
-                        <svg width="84" height="84" viewBox="0 0 24 24" fill="none" transform='rotate(180)' xmlns="http://www.w3.org/2000/svg">
-                        <path d="M10.5858 6.34317L12 4.92896L19.0711 12L12 19.0711L10.5858 17.6569L16.2427 12L10.5858 6.34317Z" 
-                        fill="currentColor"/>
-                        </svg>
+            <div
+            onTouchStart={e => this.handleTouchStart(e)}
+            onTouchMove={e => this.handleTouchMove(e)}>
+                { !this.Touch() ?
+                (<Link id="link-left" to={`/${(this.state.thisPage - 1)}`} onClick={() => this.handleNavClick() } >
+                    <div className='switch-wrapper switch-left'
+                    onMouseEnter={() => this.handleOpacity("left", 1)} onMouseLeave={() => this.handleOpacity("left", 0.3)}>  
+                    <h1 className={'nav-text nav-text-left out' + this.state.out} style={{opacity: this.state.navLeftOpacity}}>Repo</h1>
                     </div>
-                </Link>
+                </Link>) : (<Link id="link-left" to={`/${(this.state.thisPage - 1)}`} onClick={() => this.handleNavClick() } ></Link>)
+                }
                 <motion.div 
                 key="wordpress"
                 initial={{x: "-100%" }} 
                 animate={{x: 0 }} 
-                transition={{ x: {duration: 0.8, ease: easeOut, type: spring} }} 
+                transition={{ x: {duration: 2.5, type: "spring", bounce: 0.16, damping: 14}  }} 
                 exit={{x: 0 }}
                 className='Wordpress big-wrapper'>
                     <Content />
                 </motion.div>
-                <Link to={`/${(this.state.thisPage + 1) % 4}`} onClick={() => this.props.goHandleClick(this.state.thisPage)}>                    
-                    <div className='switch-wrapper switch-right'>
-                        <svg width="84" height="84" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M10.5858 6.34317L12 4.92896L19.0711 12L12 19.0711L10.5858 17.6569L16.2427 12L10.5858 6.34317Z" 
-                        fill="currentColor"/>
-                        </svg>
+                { !this.Touch() ?
+                (<Link id="link-right" to={`/${(this.state.thisPage + 1) % 4}`} onClick={() => this.handleNavClick() }>                    
+                    <div className='switch-wrapper switch-right'
+                    onMouseEnter={() => this.handleOpacity("right", 1)} onMouseLeave={() => this.handleOpacity("right", 0.3)}>            
+                    <h1 className={'nav-text nav-text-right out' + this.state.out} style={{opacity: this.state.navRightOpacity}}>About</h1>
                     </div>
-                </Link>
+                </Link>) : (<Link id="link-right" to={`/${(this.state.thisPage + 1) % 4}`} onClick={() => this.handleNavClick() }></Link>)
+                }
             </div>
         )
 
     else return (
-        <div>
-            <Link to={`/${(this.state.thisPage - 1)}`} onClick={() => this.props.goHandleClick(this.state.thisPage)}>
-                <div className='switch-wrapper switch-left'>  
-                    <svg width="84" height="84" viewBox="0 0 24 24" fill="none" transform='rotate(180)' xmlns="http://www.w3.org/2000/svg">
-                    <path d="M10.5858 6.34317L12 4.92896L19.0711 12L12 19.0711L10.5858 17.6569L16.2427 12L10.5858 6.34317Z" 
-                    fill="currentColor"/>
-                    </svg>
+        <div
+        onTouchStart={e => this.handleTouchStart(e)}
+            onTouchMove={e => this.handleTouchMove(e)}>
+            { !this.Touch() ?
+            (<Link id="link-left" to={`/${(this.state.thisPage - 1)}`} onClick={() => this.handleNavClick() }>
+                <div className='switch-wrapper switch-left'
+                onMouseEnter={() => this.handleOpacity("left", 1)} onMouseLeave={() => this.handleOpacity("left", 0.3)}>  
+                <h1 className={'nav-text nav-text-left out' + this.state.out} style={{opacity: this.state.navLeftOpacity}}>Repo</h1>
                 </div>
-            </Link>
+            </Link>) : (<Link id="link-left" to={`/${(this.state.thisPage - 1)}`} onClick={() => this.handleNavClick() }></Link>)
+            }
             <motion.div 
             key="wordpress"
             initial={{x: "100%" }} 
             animate={{x: 0 }} 
-            transition={{ x: {duration: 0.8, ease: easeOut, type: spring} }} 
+            transition={{ x: {duration: 2.5, type: "spring", bounce: 0.16, damping: 14}  }} 
             exit={{x: 0 }}
             className='Wordpress big-wrapper'>
                 <Content />
             </motion.div>
-            <Link to={`/${(this.state.thisPage + 1) % 4}`} onClick={() => this.props.goHandleClick(this.state.thisPage)}>                    
-                <div className='switch-wrapper switch-right'>
-                    <svg width="84" height="84" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M10.5858 6.34317L12 4.92896L19.0711 12L12 19.0711L10.5858 17.6569L16.2427 12L10.5858 6.34317Z" 
-                    fill="currentColor"/>
-                    </svg>
+            { !this.Touch() ?
+            (<Link id="link-right" to={`/${(this.state.thisPage + 1) % 4}`} onClick={() => this.handleNavClick() }>                    
+                <div className='switch-wrapper switch-right'
+                onMouseEnter={() => this.handleOpacity("right", 1)} onMouseLeave={() => this.handleOpacity("right", 0.3)}>
+                <h1 className={'nav-text nav-text-right out' + this.state.out} style={{opacity: this.state.navRightOpacity}}>About</h1>
                 </div>
-            </Link>
+            </Link>) : (<Link id="link-right" to={`/${(this.state.thisPage + 1) % 4}`} onClick={() => this.handleNavClick() }> </Link>)
+            }
         </div>
     )
     }
@@ -119,6 +176,12 @@ class Content extends React.Component {
         }
     }
 
+    Touch() {
+        return ( 'ontouchstart' in window ) ||
+               ( navigator.maxTouchPoints > 0 ) ||
+               ( navigator.msMaxTouchPoints > 0 );
+    }
+
     tilt(t) {
         var e = -(20 + (this.state.windowWidth / 30) - (t.pageX / 25))
         var n = ( 20 + (this.state.windowHeight / 2) - (t.pageY / 15))
@@ -160,6 +223,15 @@ class Content extends React.Component {
                                     <p>Stackable/Getwid/Spectra</p>
                                     <p>Woocommerce</p>
                 </div>
+
+                {   this.Touch() &&
+
+                <div className='swipe-wrapper'>
+                <img className="swipe swipe-left" alt="swipe-left" src="/images/freccia1.png" style={{ width: 40}}/>
+                        <img className="swipe swipe-right" alt="swipe-right" src="/images/freccia1.png" style={{ width: 40}}/>
+                    </div>
+
+                }
             </div>
         )
     }

@@ -12,70 +12,128 @@ class Etc extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            thisPage: 3
+            thisPage: 3,
+            out: false,
+            navLeftOpacity: 0.3,
+            navRightOpacity: 0.3,
+            touchPosition: null
         }
+    }
+
+    Touch() {
+        return ( 'ontouchstart' in window ) ||
+               ( navigator.maxTouchPoints > 0 ) ||
+               ( navigator.msMaxTouchPoints > 0 );
+    }
+
+
+    handleTouchStart = (e) => {
+        const touchDown = e.touches[0].clientX
+        this.setState({touchPosition: touchDown})
+    }
+
+    handleTouchMove = (e) => {
+        const touchDown = this.state.touchPosition
+        const linkRight = document.getElementById("link-right")
+        const linkLeft = document.getElementById("link-left")
+    
+        if(touchDown === null) {
+            return
+        }
+    
+        const currentTouch = e.touches[0].clientX
+        const diff = touchDown - currentTouch
+    
+        if (diff > 5) {
+            linkRight.click()
+        }
+    
+        if (diff < -5) {
+            linkLeft.click()
+        }
+    
+        this.setState({touchPosition: null})
+    }
+
+    handleNavClick() {
+        this.props.goHandleClick(this.state.thisPage);
+        this.setState({out: true})
+    }
+
+    handleOpacity(direction, n) {
+        if (direction === "left") {
+            this.setState({navLeftOpacity: n})
+        }
+        else if (direction === "right") {
+            this.setState({navRightOpacity: n})
+        }
+        else return null
     }
 
     render() {
 
         if (this.props.previousPage > this.state.thisPage ||
             this.props.previousPage === 0) return (
-            <div>
-                <Link to={`/${(this.state.thisPage - 1)}`} onClick={() => this.props.goHandleClick(this.state.thisPage)}>
-                    <div className='switch-wrapper switch-left'>  
-                        <svg width="84" height="84" viewBox="0 0 24 24" fill="none" transform='rotate(180)' xmlns="http://www.w3.org/2000/svg">
-                        <path d="M10.5858 6.34317L12 4.92896L19.0711 12L12 19.0711L10.5858 17.6569L16.2427 12L10.5858 6.34317Z" 
-                        fill="currentColor"/>
-                        </svg>
+            <div
+            onTouchStart={e => this.handleTouchStart(e)}
+            onTouchMove={e => this.handleTouchMove(e)}>
+                { !this.Touch() ?
+                (<Link id="link-left" to={`/${(this.state.thisPage - 1)}`} onClick={() => this.handleNavClick() }>
+                    <div className='switch-wrapper switch-left'
+                    onMouseEnter={() => this.handleOpacity("left", 1)} onMouseLeave={() => this.handleOpacity("left", 0.3)}>  
+                        <h1 className={'nav-text nav-text-left out' + this.state.out} style={{opacity: this.state.navLeftOpacity}}>Wordpress</h1>
                     </div>
-                </Link>
+                </Link>) : (<Link id="link-left" to={`/${(this.state.thisPage - 1)}`} onClick={() => this.handleNavClick() }></Link>)
+                }
                 <motion.div 
                 key="Etc"
                 initial={{x: "-100%" }} 
                 animate={{x: 0 }} 
-                transition={{ x: {duration: 0.8, ease: easeOut, type: spring} }} 
+                transition={{ x: {duration: 2.5, type: "spring", bounce: 0.16, damping: 14}  }} 
                 exit={{x: 0 }}
                 className='Etc big-wrapper'>
                     <Content language={this.props.language}/>
                 </motion.div>
-                <Link to={`/${(this.state.thisPage + 1) % 4}`} onClick={() => this.props.goHandleClick(this.state.thisPage)}>                    
-                    <div className='switch-wrapper switch-right'>
-                        <svg width="84" height="84" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M10.5858 6.34317L12 4.92896L19.0711 12L12 19.0711L10.5858 17.6569L16.2427 12L10.5858 6.34317Z" 
-                        fill="currentColor"/>
-                        </svg>
+                { !this.Touch() ?
+                (<Link id="link-right" to={`/${(this.state.thisPage + 1) % 4}`} onClick={() => this.handleNavClick() }>                    
+                    <div className='switch-wrapper switch-right'
+                    onMouseEnter={() => this.handleOpacity("right", 1)} onMouseLeave={() => this.handleOpacity("right", 0.3)}>
+                        <h1 className={'nav-text nav-text-right out' + this.state.out} style={{opacity: this.state.navRightOpacity}}>Home</h1>
                     </div>
-                </Link>
+                </Link>) : (<Link id="link-right" to={`/${(this.state.thisPage + 1) % 4}`} onClick={() => this.handleNavClick() }></Link>)
+                }
             </div>
         )
 
     else return (
-        <div>
-            <Link to={`/${(this.state.thisPage - 1)}`} onClick={() => this.props.goHandleClick(this.state.thisPage)}>
-                <div className='switch-wrapper switch-left'>  
-                    <svg width="84" height="84" viewBox="0 0 24 24" fill="none" transform='rotate(180)' xmlns="http://www.w3.org/2000/svg">
-                    <path d="M10.5858 6.34317L12 4.92896L19.0711 12L12 19.0711L10.5858 17.6569L16.2427 12L10.5858 6.34317Z" 
-                    fill="currentColor"/>
-                    </svg>
+        <div
+        onTouchStart={e => this.handleTouchStart(e)}
+            onTouchMove={e => this.handleTouchMove(e)}>
+            { !this.Touch() ?
+            (<Link id="link-left" to={`/${(this.state.thisPage - 1)}`} onClick={() => this.handleNavClick() }>
+                <div className='switch-wrapper switch-left'
+                onMouseEnter={() => this.handleOpacity("left", 1)} onMouseLeave={() => this.handleOpacity("left", 0.3)}>  
+                    <h1 className={'nav-text nav-text-left out' + this.state.out} style={{opacity: this.state.navLeftOpacity}}>Wordpress</h1>
                 </div>
-            </Link>
+            </Link>) : (<Link id="link-left" to={`/${(this.state.thisPage - 1)}`} onClick={() => this.handleNavClick() }></Link>)
+            }
             <motion.div 
             key="Etc"
             initial={{x: "100%" }} 
             animate={{x: 0 }} 
-            transition={{ x: {duration: 0.8, ease: easeOut, type: spring} }} 
+            transition={{ x: {duration: 2.5, type: "spring", bounce: 0.16, damping: 14}  }} 
             exit={{x: 0 }}
             className='Etc big-wrapper'>
                 <Content language={this.props.language}/>
             </motion.div>
-            <Link to={`/${(this.state.thisPage + 1) % 4}`} onClick={() => this.props.goHandleClick(this.state.thisPage)}>                    
-                <div className='switch-wrapper switch-right'>
-                    <svg width="84" height="84" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M10.5858 6.34317L12 4.92896L19.0711 12L12 19.0711L10.5858 17.6569L16.2427 12L10.5858 6.34317Z" 
-                    fill="currentColor"/>
-                    </svg>
+            { !this.Touch() ?
+            (<Link id="link-right" to={`/${(this.state.thisPage + 1) % 4}`} onClick={() => this.handleNavClick() }>                    
+                <div className='switch-wrapper switch-right'
+                onMouseEnter={() => this.handleOpacity("right", 1)} onMouseLeave={() => this.handleOpacity("right", 0.3)}>
+                    <h1 className={'nav-text nav-text-right out' + this.state.out} style={{opacity: this.state.navRightOpacity}}>Home</h1>
                 </div>
-            </Link>
+            </Link>) : (<Link id="link-right" to={`/${(this.state.thisPage + 1) % 4}`} onClick={() => this.handleNavClick() }></Link>)
+            }
         </div>
     )
     }
@@ -88,6 +146,12 @@ class Content extends React.Component {
         this.state = {
             ingagas: false
         }
+    }
+    
+    Touch() {
+        return ( 'ontouchstart' in window ) ||
+               ( navigator.maxTouchPoints > 0 ) ||
+               ( navigator.msMaxTouchPoints > 0 );
     }
 
     ingagasPeekabo(bool) {
@@ -121,12 +185,22 @@ class Content extends React.Component {
                         </div>
                     </Carousel>
                     </div>
+                    
+                    {   this.Touch() &&
+                    
+                    <div className='swipe-wrapper'>
+                    <img className="swipe swipe-left" alt="swipe-left" src="/images/freccia1.png" style={{ width: 40}}/>
+                        <img className="swipe swipe-right" alt="swipe-right" src="/images/freccia1.png" style={{ width: 40}}/>
+                    </div>
+                    
+                    }
                 </div>
         )
     }
 }
   
 const Carousel = ({children}) => {
+
 const [active, setActive] = useState(0);
 const count = React.Children.count(children);
 
@@ -138,7 +212,7 @@ return (
             '--active': i === active ? 1 : 0,
             '--offset': (active - i) / 3,
             '--direction': Math.sign(active - i),
-            '--abs-offset': Math.abs(active - i) / 3,
+            '--absoffset': Math.abs(active - i) / 3,
             'pointer-events': active === i ? 'auto' : 'none',
             'opacity': Math.abs(active - i) >= MAX_VISIBILITY ? '0' : '1',
             'display': Math.abs(active - i) > MAX_VISIBILITY ? 'none' : 'block',
@@ -204,7 +278,7 @@ function Eng(props) {
                         <p>I'm <b>CHIEF EDITOR</b> and webmaster for <a target="_blank" href="https://www.livore.it/"><strong>Livore</strong></a>. I'm also one of the top columnists of the webzine and, occasionally, a graphic designer.</p>
                         <p><a target="_blank" href="https://www.livore.it/author/wp_13976739/"><strong>Here</strong></a> you can find all my writings as a journalist. Unfortunately, they're only in Italian.</p>
                         <br />
-                        <p>I'm an <b>UI/UX design</b> enthusiast, especially in videogames. I'm a cat's human, his name is <strong className="ingagas" onMouseOver={() => props.ingagasPeekabo(true)} onMouseLeave={() => props.ingagasPeekabo(false)}>INGAGAS</strong>, and he's basically my boss.</p>
+                        <p>I'm an <b>UI/UX design</b> enthusiast, especially in videogames. I'm a cat's human, his name is <strong className="ingagas" onMouseOver={() => props.ingagasPeekabo(true)} onMouseLeave={() => props.ingagasPeekabo(false)}>Ingagas</strong>, and he's basically my boss.</p>
                         <img className={"ingimg" + props.ingagas} src="/images/ingagas.jpg"/>
                     </div>
             </div>
@@ -267,7 +341,7 @@ function Ita(props) {
                             <p>Dal 2022 sono <b>CAPOREDATTORE</b> e webmaster del magazine online <a target="_blank" href="https://www.livore.it/"><strong>Livore</strong></a>, di cui sono anche articolista e occasionalmente grafico.</p>
                             <p><a target="_blank" href="https://www.livore.it/author/wp_13976739/"><strong>Qui</strong></a> è possibile trovare l'elenco degli articoli che ho scritto nell'ultimo anno.</p>
                             <br />
-                            <p>Sono un appassionato di <b>UI/UX design</b>, soprattutto nel contesto videoludico. Ho un gatto nero, si chiama <strong className="ingagas" onMouseOver={() => props.ingagasPeekabo(true)} onMouseLeave={() => props.ingagasPeekabo(false)}>INGAGAS</strong>, e tendenzialmente comanda lui.</p>
+                            <p>Sono un appassionato di <b>UI/UX design</b>, soprattutto nel contesto videoludico. Ho un gatto nero, si chiama <strong className="ingagas" onMouseOver={() => props.ingagasPeekabo(true)} onMouseLeave={() => props.ingagasPeekabo(false)}>Ingagas</strong>, e tendenzialmente comanda lui.</p>
                             <img className={"ingimg" + props.ingagas} src="/images/ingagas.jpg"/>
                         </div>
             </div>

@@ -20,12 +20,20 @@
     position: absolute;
     transform: 
     rotateY(calc(var(--offset) * 50deg)) 
-    scaleY(calc(1 + var(--abs-offset) * -0.4))
-    translateZ(calc(var(--abs-offset) * -30rem))
+    scaleY(calc(1 + var(--absoffset) * -0.4))
+    translateZ(calc(var(--absoffset) * -30rem))
     translateX(calc(var(--direction) * -5rem));
-    filter: blur(calc(var(--abs-offset) * 1rem));
+    filter: blur(calc(var(--absoffset) * 1rem));
     transition: all 0.2s ease-out;
+}
 
+@-moz-document url-prefix() { 
+  .card-container {
+    filter: blur(0);
+  }
+  .card-container .card.glass {
+    background: rgba(46, 54, 47, 0.9);;
+  }
 }
 
 .carousel {
@@ -169,6 +177,11 @@ h2 {
 }
 
 @media screen and (max-width: 550px) {  // mobile
+
+  .fade-in {
+    margin-top: -40px;
+  }
+
   .mobile-none {
     display: none
   }
@@ -187,5 +200,15 @@ h2 {
   .card p {
     font-size: calc(11.2px + 0.2vw);
   }
+
+  .card {
+    min-width: 330px;
+  }
+
+  .card h2 {
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+
   
 }

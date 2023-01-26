@@ -6,6 +6,7 @@
   --mid: #2E362F; // rgba(46, 54, 47, 1)
   --light: #ffe3c6; // rgba(255, 227, 198, 1)
   --accent: #df7b4f; // rgba(223, 123, 79, 1)
+  background-color: #191212;
 }
 
 * {
@@ -85,6 +86,18 @@ strong {
   color: var(--accent)
 }
 
+
+.glass {
+  background: rgba(25, 18, 18, 0.5);
+}
+
+.card.glass {
+  
+  background: rgba(25, 18, 18, 0.5);
+}
+
+
+
 .glass {
   background: rgba(25, 18, 18, 0);
   border-radius: 16px;
@@ -97,6 +110,7 @@ strong {
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
 }
+
 
 
 .swing-in-top-fwd {
@@ -198,10 +212,105 @@ strong {
   }
 }
 
+.nav-text {
+  font-size: 25px;
+  text-shadow: 0px 0px 10px var(--accent), 0px 0px 10px var(--accent), 0px 0px 10px var(--accent);
+  -webkit-animation: tracking-in-expand 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) 0.8s both;
+	        animation: tracking-in-expand 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) 0.8s both;
+          animation-delay: 1.3s;
+}
+
+.nav-text.outtrue {
+  -webkit-animation: tracking-out-contract 0.8s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+  animation: tracking-out-contract 0.8s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+
+.nav-text-left {
+  transform: rotate(270deg)
+}
+
+.nav-text-right {
+  transform: rotate(90deg)
+}
+
+@-webkit-keyframes tracking-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: auto;
+  }
+}
+@keyframes tracking-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: auto;
+  }
+}
+
+@-webkit-keyframes tracking-out-contract {
+  0% {
+    opacity: auto;
+  }
+  50% {
+    opacity: auto / 2;
+  }
+  100% {
+    letter-spacing: -0.5em;
+    opacity: 0;
+  }
+}
+@keyframes tracking-out-contract {
+  0% {
+    opacity: auto;
+  }
+  50% {
+    opacity: auto;
+  }
+  100% {
+    letter-spacing: -0.5em;
+    opacity: 0;
+  }
+}
+
 @media screen and (max-width: 945px) {
 
   .switch-wrapper {
     width: 50px;
   }
 
+  .switch-wrapper h1 {
+    font-size: 20px;
+  }
+
+}
+
+@media screen and (max-width: 550px) {
+
+  .swipe-wrapper {
+    position: absolute;
+    bottom: 60px;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+
+  }
+
+  .swipe-left {
+    transform: rotateX(180deg);
+  }
+
+  .swipe-right {
+    transform: rotate(180deg);
+  }
 }
