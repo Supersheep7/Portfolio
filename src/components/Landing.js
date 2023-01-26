@@ -1,6 +1,6 @@
 import React from 'react';
 import "./Landing.scss"
-import { easeOut, motion, spring } from "framer-motion"
+import { easeIn, easeInOut, easeOut, motion, spring } from "framer-motion"
 import { Link } from "react-router-dom"
 
 class Landing extends React.Component {
@@ -86,7 +86,7 @@ class Landing extends React.Component {
                 key="Landing"
                 initial={{x: "-100%" }} 
                 animate={{x: 0 }} 
-                transition={{ x: {duration: 2.5, type: "spring", bounce: 0.16, damping: 14}  }} 
+                transition={{ x: {delay: 0.15, duration: 4, ease: easeIn, type: "spring", bounce: 0.16, damping: 14}  }} 
                 exit={{x: 0 }}
                 className='Landing big-wrapper'>
                     <Content language={this.props.language} delayed="0"/>
@@ -123,7 +123,7 @@ class Landing extends React.Component {
                     key="Landing" 
                     initial={{x: 0 }} 
                     animate={{x: 0 }} 
-                    transition={{ x: {duration: 2.5, type: "spring", bounce: 0.16, damping: 14}  }} 
+                    transition={{ x: {delay: 0.15, duration: 4, ease: easeIn, type: "spring", bounce: 0.16, damping: 14}  }} 
                     exit={{x: 0 }}
                     className='Landing big-wrapper'>
                         <Content language={this.props.language} delayed="1"/>
@@ -156,7 +156,7 @@ class Landing extends React.Component {
             key="Landing"
             initial={{x: "100%" }} 
             animate={{x: 0 }} 
-            transition={{ x: {duration: 2.5, type: "spring", bounce: 0.16, damping: 14}  }} 
+            transition={{ x: {delay: 0.15, duration: 4, ease: easeIn, type: "spring", bounce: 0.16, damping: 14}  }} 
             exit={{x: 0 }}
             className='Landing big-wrapper'>
                 <Content language={this.props.language} delayed="0"/>
@@ -193,7 +193,7 @@ class Content extends React.Component {
             key="Landing-content-wrapper" 
             initial={{opacity: 1 }} 
             animate={{opacity: 1 }} 
-            transition={{ duration: this.props.delayed + 0.8, ease: easeOut, type: spring }} 
+            transition={{ duration: this.props.delayed + 0.8, ease: easeIn, type: spring }} 
             exit={{opacity  : 1 }}
             className="Landing-content-wrapper">
                 <div className="picandbio fade-in-top small-none" style={{ animationDelay: this.props.delayed*1000 + 1000 + "ms" }}>

@@ -7,7 +7,7 @@ class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      previousPage: null,
+      previousPage: -1,
       thisPage: 0,
       language: "english"
     }

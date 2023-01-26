@@ -1,6 +1,6 @@
 import React from 'react';
 import { useRef } from 'react';
-import { easeOut, motion, spring } from "framer-motion"
+import { easeIn, easeInOut, easeOut, motion, spring } from "framer-motion"
 import { Link } from "react-router-dom"
 import "./Wordpress.scss"
 
@@ -84,7 +84,7 @@ class Wordpress extends React.Component {
                 key="wordpress"
                 initial={{x: "-100%" }} 
                 animate={{x: 0 }} 
-                transition={{ x: {duration: 2.5, type: "spring", bounce: 0.16, damping: 14}  }} 
+                transition={{ x: {delay: 0.15, duration: 4, ease: easeIn, type: "spring", bounce: 0.16, damping: 14}  }} 
                 exit={{x: 0 }}
                 className='Wordpress big-wrapper'>
                     <Content />
@@ -116,7 +116,7 @@ class Wordpress extends React.Component {
             key="wordpress"
             initial={{x: "100%" }} 
             animate={{x: 0 }} 
-            transition={{ x: {duration: 2.5, type: "spring", bounce: 0.16, damping: 14}  }} 
+            transition={{ x: {delay: 0.15, duration: 4, ease: easeIn, type: "spring", bounce: 0.16, damping: 14}  }} 
             exit={{x: 0 }}
             className='Wordpress big-wrapper'>
                 <Content />

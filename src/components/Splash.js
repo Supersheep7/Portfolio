@@ -33,7 +33,7 @@ class Splash extends React.Component {
                 initial={{opacity: 1 }} 
                 animate={{opacity: 1 }} 
                 exit={{ height: 0, bottom: "50%"}}
-                transition={{ duration: 0.8, ease: easeOut,  delay: 1 }} 
+                transition={{ delay: 0.3, duration: 0.8, ease: easeOut,  delay: 1 }} 
                 className='Splash big-wrapper'>
                     <motion.div 
                     key="Splash"
@@ -44,7 +44,7 @@ class Splash extends React.Component {
                             <Content langHandleClick={this.props.langHandleClick}/>
                     </motion.div>
                 </motion.div>) :
-            (<div className="Splash big-wrapper"><Content langHandleClick={this.props.langHandleClick}/></div>)
+            (<div className="Splash big-wrapper"><Content langHandleClick={this.props.langHandleClick} goHandleClick={this.props.goHandleClick}/></div>)
             }
             </div>
                )
@@ -68,12 +68,12 @@ class Content extends React.Component {
             <div className='splash-wrapper'>
                 <h1>Ciao!</h1>
                 <div className='lang-wrapper'>
-                    <div onClick={() => {console.log("click"); this.props.langHandleClick("italiano"); }}>
+                    <div onClick={() => {this.props.langHandleClick("italiano"); this.props.goHandleClick(-1)}}>
                     <Link to="/0" className="first-link">
                     <img alt="ita" src="images/it.png"/>
                     </Link>
                     </div>
-                    <div onClick={() => {this.props.langHandleClick("english"); this.props.goHandleClick(this.state.thisPage)}}>
+                    <div onClick={() => {this.props.langHandleClick("english"); this.props.goHandleClick(-1)}}>
                     <Link to="/0" className="first-link">
                     <img alt="eng" src="/images/uk.png"/>
                     </Link>
