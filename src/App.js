@@ -13,6 +13,17 @@ class App extends React.Component {
     }
   }
 
+  preloadImages() {
+    var img1 = new Image()
+    var img2 = new Image()
+    var img3 = new Image()
+    var img4 = new Image()
+    img1.src = "/images/Landing.jpg"
+    img2.src = "/images/elk.jpg"
+    img3.src = "/images/Wordpress.jpg"
+    img4.src = "/images/night.jpg"
+  }
+
   langHandleClick(lang) {
     this.setState({
       language: lang
@@ -40,6 +51,10 @@ class App extends React.Component {
   </div>
     );
   }
+  
+  componentDidMount() {
+    this.preloadImages()
+}
 
 }
 

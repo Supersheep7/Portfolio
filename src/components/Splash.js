@@ -83,9 +83,6 @@ class Content extends React.Component {
         )
         }
     }
-    componentDidMount() {
-        this.preloadImages()
-    }
 }
 
 export default Splash
