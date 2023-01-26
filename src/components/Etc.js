@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import { ReactDOM } from 'react';
 import { easeOut, motion, spring } from "framer-motion"
 import { Link } from "react-router-dom"
-import {TiChevronLeftOutline, TiChevronRightOutline} from 'https://cdn.skypack.dev/react-icons/ti';
 import "./Etc.scss"
 
 const CARDS = 4;
@@ -206,7 +205,7 @@ const count = React.Children.count(children);
 
 return (
     <div className='carousel'>
-    {active > 0 && <button className='nav left' onClick={() => setActive(i => i - 1)}><TiChevronLeftOutline/></button>}
+    {active > 0 && <button className='nav left' onClick={() => setActive(i => i - 1)}><img className="chevron-left" alt="chevron-left" src="/images/chevron.png"/></button>}
     {React.Children.map(children, (child, i) => (
         <div className='card-container' style={{
             '--active': i === active ? 1 : 0,
@@ -220,7 +219,7 @@ return (
         {child}
         </div>
     ))}
-    {active < count - 1 && <button className='nav right' onClick={() => setActive(i => i + 1)}><TiChevronRightOutline/></button>}
+    {active < count - 1 && <button className='nav right' onClick={() => setActive(i => i + 1)}><img className="chevron-right" alt="chevron-right" src="/images/chevron.png"/></button>}
     </div>
 );
 };
