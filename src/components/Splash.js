@@ -67,7 +67,12 @@ class Content extends React.Component {
         return (
             <div className='splash-wrapper'>
                 <h1>Ciao!</h1>
-                <div className='lang-wrapper'>
+                <motion.div 
+                key="lang"
+                initial={{opacity: 0 }} 
+                animate={{opacity: 1 }} 
+                transition={{ opacity: {duration: 0.5, ease: easeIn, delay: 1}  }} 
+                className='lang-wrapper'>
                     <div onClick={() => {this.props.langHandleClick("italiano"); this.props.goHandleClick(-1)}}>
                     <Link to="/0" className="first-link">
                     <img alt="ita" src="images/it.png"/>
@@ -78,7 +83,7 @@ class Content extends React.Component {
                     <img alt="eng" src="/images/uk.png"/>
                     </Link>
                     </div>
-                </div>
+                </motion.div>
             </div>
         )
         }
