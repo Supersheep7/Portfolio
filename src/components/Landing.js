@@ -218,7 +218,7 @@ class Content extends React.Component {
                 <div className='Bio small-yes'>
                 <div className='Propic-wrapper'>
                             <div className="clipping-mask">
-                                <img className="Propic" src="images/propic.jpg"/>
+                                <img className="Propic" src="images/alessandro.jpg"/>
                             </div>
                         </div>
                 <div className="name-and-social">
