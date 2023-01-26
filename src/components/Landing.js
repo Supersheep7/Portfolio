@@ -198,7 +198,7 @@ class Content extends React.Component {
                 <div className="picandbio fade-in-top small-none" style={{ animationDelay: this.props.delayed*1000 + 1000 + "ms" }}>
                         <div className='Propic-wrapper'>
                             <div className="clipping-mask">
-                                <img className="Propic" src="images/propic.jpg"/>
+                                <img className="Propic" src="images/alessandro.jpg"/>
                             </div>
                         </div>
                     <div className='Bio glass'>
