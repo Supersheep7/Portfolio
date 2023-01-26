@@ -89,7 +89,7 @@ class Repo extends React.Component {
                 key="Repo"
                 initial={{x: "-100%" }} 
                 animate={{x: 0 }} 
-                transition={{ x: {delay: 0.15, duration: 4, ease: easeIn, type: "spring", bounce: 0.16, damping: 14} }} 
+                transition={{ x: {duration: 2.5, ease: easeIn, type: "spring", bounce: 0.16, damping: 14} }} 
                 exit={{x: 0 }}
                 className='Repo big-wrapper'>
                     <Content language={this.props.language} windowWidth={this.state.windowWidth}/>
@@ -121,7 +121,7 @@ class Repo extends React.Component {
                 key="Repo"
                 initial={{x: "100%" }} 
                 animate={{x: 0 }} 
-                transition={{ x: { delay: 0.15, duration: 4, ease: easeIn, type: "spring", bounce: 0.16, damping: 14}}} 
+                transition={{ x: {duration: 2.5, ease: easeIn, type: "spring", bounce: 0.16, damping: 14}}} 
                 exit={{x: 0 }}
                 className='Repo big-wrapper'>
                     <Content language={this.props.language} windowWidth={this.state.windowWidth}/>

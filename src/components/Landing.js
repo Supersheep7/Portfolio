@@ -86,7 +86,7 @@ class Landing extends React.Component {
                 key="Landing"
                 initial={{x: "-100%" }} 
                 animate={{x: 0 }} 
-                transition={{ x: {delay: 0.15, duration: 4, ease: easeIn, type: "spring", bounce: 0.16, damping: 14}  }} 
+                transition={{ x: {duration: 2.5, ease: easeIn, type: "spring", bounce: 0.16, damping: 14}  }} 
                 exit={{x: 0 }}
                 className='Landing big-wrapper'>
                     <Content language={this.props.language} delayed="0"/>
@@ -123,7 +123,7 @@ class Landing extends React.Component {
                     key="Landing" 
                     initial={{x: 0 }} 
                     animate={{x: 0 }} 
-                    transition={{ x: {delay: 0.15, duration: 4, ease: easeIn, type: "spring", bounce: 0.16, damping: 14}  }} 
+                    transition={{ x: {duration: 2.5, ease: easeIn, type: "spring", bounce: 0.16, damping: 14}  }} 
                     exit={{x: 0 }}
                     className='Landing big-wrapper'>
                         <Content language={this.props.language} delayed="1"/>
@@ -156,7 +156,7 @@ class Landing extends React.Component {
             key="Landing"
             initial={{x: "100%" }} 
             animate={{x: 0 }} 
-            transition={{ x: {delay: 0.15, duration: 4, ease: easeIn, type: "spring", bounce: 0.16, damping: 14}  }} 
+            transition={{ x: {duration: 2.5, ease: easeIn, type: "spring", bounce: 0.16, damping: 14}  }} 
             exit={{x: 0 }}
             className='Landing big-wrapper'>
                 <Content language={this.props.language} delayed="0"/>

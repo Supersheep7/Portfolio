@@ -64,17 +64,8 @@
   z-index: 99;
 }
 
-.Landing {
-  background: var(--dark);
-}
-
-.Repo, .Etc {
-  background: url(../public/images/elk.jpg);
-  background-size: cover; 
-}
-
-.Wordpress {
-  background: var(--dark);
+.Landing, .Repo, .Etc, .Wordpress {
+  background: var(--black);
 }
 
 p {

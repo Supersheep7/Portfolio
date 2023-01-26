@@ -88,7 +88,7 @@ class Etc extends React.Component {
                 key="Etc"
                 initial={{x: "-100%" }} 
                 animate={{x: 0 }} 
-                transition={{ x: {delay: 0.15, duration: 4, ease: easeIn, type: "spring", bounce: 0.16, damping: 14}  }} 
+                transition={{ x: {duration: 2.5, ease: easeIn, type: "spring", bounce: 0.16, damping: 14}  }} 
                 exit={{x: 0 }}
                 className='Etc big-wrapper'>
                     <Content language={this.props.language}/>
@@ -120,7 +120,7 @@ class Etc extends React.Component {
             key="Etc"
             initial={{x: "100%" }} 
             animate={{x: 0 }} 
-            transition={{ x: {delay: 0.15, duration: 4, ease: easeIn, type: "spring", bounce: 0.16, damping: 14}  }} 
+            transition={{ x: {duration: 2.5, ease: easeIn, type: "spring", bounce: 0.16, damping: 14}  }} 
             exit={{x: 0 }}
             className='Etc big-wrapper'>
                 <Content language={this.props.language}/>
