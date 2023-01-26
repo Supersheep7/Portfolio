@@ -68,7 +68,7 @@ class Content extends React.Component {
             <div className='splash-wrapper'>
                 <h1>Ciao!</h1>
                 <div className='lang-wrapper'>
-                    <div onClick={() => {console.log("click"); this.props.langHandleClick("italiano"); this.props.goHandleClick(this.state.thisPage)}}>
+                    <div onClick={() => {console.log("click"); this.props.langHandleClick("italiano"); }}>
                     <Link to="/0" className="first-link">
                     <img alt="ita" src="images/it.png"/>
                     </Link>
