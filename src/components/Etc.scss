@@ -9,6 +9,10 @@
     background-size: cover;
     background-position: center;
     overflow: hidden;
+    
+  -webkit-animation: fade-in 0.3s ease-out both;
+  animation: fade-in 0.3s ease-out both;
+  animation-delay: 0.4s;
 }
 
 .Etc-big-wrapper p {

@@ -191,10 +191,6 @@ class Content extends React.Component {
         return (
             <motion.div 
             key="Landing-content-wrapper" 
-            initial={{opacity: 1 }} 
-            animate={{opacity: 1 }} 
-            transition={{ duration: this.props.delayed + 0.8, ease: easeIn, type: spring }} 
-            exit={{opacity  : 1 }}
             className="Landing-content-wrapper">
                 <div className="picandbio fade-in-top small-none" style={{ animationDelay: this.props.delayed*1000 + 1000 + "ms" }}>
                         <div className='Propic-wrapper'>

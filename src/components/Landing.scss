@@ -4,12 +4,16 @@
 
 .Landing-content-wrapper {
     position: relative;
-    width: 100vw;
-    height: 100vh;
+    
     background-color: var(--black);
     background: url("../../public/images/Landing.jpg");
     background-size: cover;
     background-position: center;
+    -webkit-animation: fade-in 0.3s ease-out both;
+    animation: fade-in 0.3s ease-out both;
+    animation-delay: 0.4s;
+    width: 100vw;
+    height: 100vh;
 }
 
 p {
