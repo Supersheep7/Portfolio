@@ -61,6 +61,18 @@ class Content extends React.Component {
         this.state = {}
     }
 
+    preloadImages()
+    {
+    var img1 = new Image();
+    var img2 = new Image();
+    var img3 = new Image();
+    var img4 = new Image();
+    img1.src = "/test/Landing.jpg";
+    img2.src = "/test/elk.jpg";
+    img3.src = "/test/Wordpress.jpg";
+    img4.src = "/test/night.jpg";
+    }
+
     render() { 
         if (this.props.previousPage === -1) return null
         else {
@@ -82,6 +94,9 @@ class Content extends React.Component {
             </div>
         )
         }
+    }
+    componentDidMount() {
+        this.preloadImages()
     }
 }
 
