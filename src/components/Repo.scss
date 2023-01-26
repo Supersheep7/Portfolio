@@ -4,13 +4,14 @@
     height: 100vh;
     background: url(../../public/images/elk.jpg);
     background-size: cover;
-    width: 75%;
+    width: 100vw;
     justify-content: space-evenly;
     align-items: center;
   }
   
   .Repo-content-wrapper  > .wrapper {
     position: relative;
+    width: 75%;
     border: 8px solid;
     background: rgba(223, 123, 79, 0.08);
     border-radius: 16px;
