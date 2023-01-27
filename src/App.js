@@ -48,15 +48,12 @@ class App extends React.Component {
         <Router>
           <AnimatedRoutes langHandleClick={this.langHandleClick.bind(this)} language={this.state.language} previousPage={this.state.previousPage} thisPage={this.state.thisPage} whatPage={this.whatPage.bind(this)} goHandleClick={this.goHandleClick.bind(this)}/>
         </Router>
-  </div>
+      </div>
     );
   }
   
   componentDidMount() {
     this.preloadImages()
-    window.onbeforeunload = function() {
-          window.alert("reloaded");
-      };
   }
 }
 

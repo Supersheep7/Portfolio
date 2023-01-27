@@ -1,6 +1,5 @@
 import React from 'react';
-import { useRef } from 'react';
-import { easeIn, easeInOut, easeOut, motion, spring } from "framer-motion"
+import { easeIn, motion } from "framer-motion"
 import { Link } from "react-router-dom"
 import "./Wordpress.scss"
 
@@ -72,14 +71,16 @@ class Wordpress extends React.Component {
             <div
             onTouchStart={e => this.handleTouchStart(e)}
             onTouchMove={e => this.handleTouchMove(e)}>
+
                 { !this.Touch() ?
                 (<Link id="link-left" to={`/${(this.state.thisPage - 1)}`} onClick={() => this.handleNavClick() } >
                     <div className='switch-wrapper switch-left'
                     onMouseEnter={() => this.handleOpacity("left", 1)} onMouseLeave={() => this.handleOpacity("left", 0.3)}>  
-                    <h1 className={'nav-text nav-text-left out' + this.state.out} style={{opacity: this.state.navLeftOpacity}}>Repo</h1>
+                        <h1 className={'nav-text nav-text-left out' + this.state.out} style={{opacity: this.state.navLeftOpacity}}>Repo</h1>
                     </div>
                 </Link>) : (<Link id="link-left" to={`/${(this.state.thisPage - 1)}`} onClick={() => this.handleNavClick() } ></Link>)
                 }
+
                 <motion.div 
                 key="wordpress"
                 initial={{x: "-100%" }} 
@@ -89,14 +90,16 @@ class Wordpress extends React.Component {
                 className='Wordpress big-wrapper'>
                     <Content />
                 </motion.div>
+
                 { !this.Touch() ?
                 (<Link id="link-right" to={`/${(this.state.thisPage + 1) % 4}`} onClick={() => this.handleNavClick() }>                    
                     <div className='switch-wrapper switch-right'
                     onMouseEnter={() => this.handleOpacity("right", 1)} onMouseLeave={() => this.handleOpacity("right", 0.3)}>            
-                    <h1 className={'nav-text nav-text-right out' + this.state.out} style={{opacity: this.state.navRightOpacity}}>About</h1>
+                        <h1 className={'nav-text nav-text-right out' + this.state.out} style={{opacity: this.state.navRightOpacity}}>About</h1>
                     </div>
                 </Link>) : (<Link id="link-right" to={`/${(this.state.thisPage + 1) % 4}`} onClick={() => this.handleNavClick() }></Link>)
                 }
+
             </div>
         )
 
@@ -104,14 +107,16 @@ class Wordpress extends React.Component {
         <div
         onTouchStart={e => this.handleTouchStart(e)}
             onTouchMove={e => this.handleTouchMove(e)}>
+
             { !this.Touch() ?
             (<Link id="link-left" to={`/${(this.state.thisPage - 1)}`} onClick={() => this.handleNavClick() }>
                 <div className='switch-wrapper switch-left'
                 onMouseEnter={() => this.handleOpacity("left", 1)} onMouseLeave={() => this.handleOpacity("left", 0.3)}>  
-                <h1 className={'nav-text nav-text-left out' + this.state.out} style={{opacity: this.state.navLeftOpacity}}>Repo</h1>
+                    <h1 className={'nav-text nav-text-left out' + this.state.out} style={{opacity: this.state.navLeftOpacity}}>Repo</h1>
                 </div>
             </Link>) : (<Link id="link-left" to={`/${(this.state.thisPage - 1)}`} onClick={() => this.handleNavClick() }></Link>)
             }
+
             <motion.div 
             key="wordpress"
             initial={{x: "100%" }} 
@@ -121,14 +126,16 @@ class Wordpress extends React.Component {
             className='Wordpress big-wrapper'>
                 <Content />
             </motion.div>
+
             { !this.Touch() ?
             (<Link id="link-right" to={`/${(this.state.thisPage + 1) % 4}`} onClick={() => this.handleNavClick() }>                    
                 <div className='switch-wrapper switch-right'
                 onMouseEnter={() => this.handleOpacity("right", 1)} onMouseLeave={() => this.handleOpacity("right", 0.3)}>
-                <h1 className={'nav-text nav-text-right out' + this.state.out} style={{opacity: this.state.navRightOpacity}}>About</h1>
+                    <h1 className={'nav-text nav-text-right out' + this.state.out} style={{opacity: this.state.navRightOpacity}}>About</h1>
                 </div>
             </Link>) : (<Link id="link-right" to={`/${(this.state.thisPage + 1) % 4}`} onClick={() => this.handleNavClick() }> </Link>)
             }
+
         </div>
     )
     }
@@ -138,29 +145,29 @@ class Wordpress extends React.Component {
 function HoverWrapper(props) {
     return (
         <div className="Wordpress-small-wrapper perspective">
-                        <div className="livore-images" style={{ 
-                            transform: `rotateY(${props.e}deg) rotateX(${props.n}deg)` 
-                            }}>
-                            <img className="livore-mobile" alt="livore-mobile" src="/images/livoremobile.png"/>
-                            <img className="livore-desktop" alt="livore-desktop" src="/images/livoredesktop.png"/>
-                            <img className="livore-logo" alt="livore-logo" src="/images/livorelogo.png"/>
-                        </div>
-                            <div className="livore-title">
-                            <h2><strong>Wordpress Webmaster</strong></h2>
-                            </div>
-                            <div className="small-none Livore-text tablet-none">
-                                <p>Analytics</p>
-                                <p>Yoast SEO</p>
-                                <p>GDPR/Cookie consent</p>
-                                <p>Blocksy</p>
-                                <p>Elementor</p>
-                                <p>Stackable/Getwid/Spectra</p>
-                                <p>Woocommerce</p>
-                            </div>    
-                            <div className='small-yes tablet-yes'>
-                                <p>Analytics / SEO / GDPR / Themes / Elementor / Getwid / Woocommerce</p>
-                            </div>
-                    </div>
+            <div className="livore-images" style={{ 
+                transform: `rotateY(${props.e}deg) rotateX(${props.n}deg)` 
+                }}>
+                <img className="livore-mobile" alt="livore-mobile" src="/images/livoremobile.png"/>
+                <img className="livore-desktop" alt="livore-desktop" src="/images/livoredesktop.png"/>
+                <img className="livore-logo" alt="livore-logo" src="/images/livorelogo.png"/>
+            </div>
+            <div className="livore-title">
+                <h2><strong>Wordpress Webmaster</strong></h2>
+            </div>
+            <div className="small-none Livore-text tablet-none">
+                <p>Analytics</p>
+                <p>Yoast SEO</p>
+                <p>GDPR/Cookie consent</p>
+                <p>Blocksy</p>
+                <p>Elementor</p>
+                <p>Stackable/Getwid/Spectra</p>
+                <p>Woocommerce</p>
+            </div>    
+            <div className='small-yes tablet-yes'>
+                <p>Analytics / SEO / GDPR / Themes / Elementor / Getwid / Woocommerce</p>
+            </div>
+        </div>
     )
 }
 
@@ -192,44 +199,45 @@ class Content extends React.Component {
         return (
             <div className="Wordpress-page-wrapper">
                 { this.state.Ready ? 
-                ( <div>
-                    <div className='Wordpress-big-wrapper top mobile-none' onMouseMove={event => this.tilt(event)}>
-                    <HoverWrapper e={this.state.e} n={this.state.n}/>
+                (   <div>
+                        <div className='Wordpress-big-wrapper top mobile-none' onMouseMove={event => this.tilt(event)}>
+                            <HoverWrapper e={this.state.e} n={this.state.n}/>
+                        </div>
+                        <div className='Wordpress-big-wrapper top mobile-yes'>
+                            <HoverWrapper e={0} n={0}/>
+                        </div>
                     </div>
-                    <div className='Wordpress-big-wrapper top mobile-yes'>
-                    <HoverWrapper e={0} n={0}/>
-                    </div>
-                </div>
                 ) 
                 : 
-                ( <div className='Wordpress-big-wrapper top'>
-                <HoverWrapper e={this.state.e} n={this.state.n}/>
-                </div> )
+                (   <div className='Wordpress-big-wrapper top'>
+                        <HoverWrapper e={this.state.e} n={this.state.n}/>
+                    </div> 
+                )
                 }  
                 <div className='Wordpress-img-wrapper tablet-none'>
-                    <img className="Wordpress-img fade-in-fwd" src="images/sun.png" style={{ animationDelay: "0.8s" }}/>
-                    <img className="Wordpress-img fade-in-fwd" src="images/twins.png" style={{ animationDelay: "1.2s" }}/>
-                    <img className="Wordpress-img fade-in-fwd" src="images/timber.png" style={{ animationDelay: "1.6s" }}/>
-                    <img className="Wordpress-img fade-in-fwd" src="images/brittle.png" style={{ animationDelay: "2s" }}/>
-                    <img className="Wordpress-img fade-in-fwd" src="images/giant.png" style={{ animationDelay: "2.4s" }}/>
-                    <img className="Wordpress-img fade-in-fwd" src="images/bramble.png" style={{ animationDelay: "2.8s" }}/>
+                    <img className="Wordpress-img fade-in-fwd" alt="sun" src="images/sun.png" style={{ animationDelay: "0.8s" }}/>
+                    <img className="Wordpress-img fade-in-fwd" alt="twins" src="images/twins.png" style={{ animationDelay: "1.2s" }}/>
+                    <img className="Wordpress-img fade-in-fwd" alt="timber" src="images/timber.png" style={{ animationDelay: "1.6s" }}/>
+                    <img className="Wordpress-img fade-in-fwd" alt="brittle" src="images/brittle.png" style={{ animationDelay: "2s" }}/>
+                    <img className="Wordpress-img fade-in-fwd" alt="giant" src="images/giant.png" style={{ animationDelay: "2.4s" }}/>
+                    <img className="Wordpress-img fade-in-fwd" alt="bramble" src="images/bramble.png" style={{ animationDelay: "2.8s" }}/>
                 </div>
                 <div className="tablet-yes small-none">
-                                <p>Plugin per Analytics</p>
-                                    <p>Yoast SEO</p>
-                                    <p>GDPR e Cookie consent</p>
-                                    <p>Blocksy</p>
-                                    <p>Elementor</p>
-                                    <p>Stackable/Getwid/Spectra</p>
-                                    <p>Woocommerce</p>
+                    <p>Plugin per Analytics</p>
+                    <p>Yoast SEO</p>
+                    <p>GDPR e Cookie consent</p>
+                    <p>Blocksy</p>
+                    <p>Elementor</p>
+                    <p>Stackable/Getwid/Spectra</p>
+                    <p>Woocommerce</p>
                 </div>
 
                 {   this.Touch() &&
 
                 <div className='swipe-wrapper'>
-                <img className="swipe swipe-left" alt="swipe-left" src="/images/freccia1.png" style={{ width: 40}}/>
-                        <img className="swipe swipe-right" alt="swipe-right" src="/images/freccia1.png" style={{ width: 40}}/>
-                    </div>
+                    <img className="swipe swipe-left" alt="swipe-left" src="/images/freccia1.png" style={{ width: 40}}/>
+                    <img className="swipe swipe-right" alt="swipe-right" src="/images/freccia1.png" style={{ width: 40}}/>
+                </div>
 
                 }
             </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import './Splash.css'
-import { easeIn, easeInOut, easeOut, motion, spring, transform } from "framer-motion"
+import { easeIn, easeOut, motion } from "framer-motion"
 import { Link } from "react-router-dom"
 
 class Splash extends React.Component {
@@ -26,14 +26,14 @@ class Splash extends React.Component {
     render() {
 
             return (
-            <div>
-            {this.Touch() === false ? 
-            (<motion.div 
+                <div>
+                {this.Touch() === false ? 
+                (<motion.div 
                 key="Splash"
                 initial={{opacity: 1 }} 
                 animate={{opacity: 1 }} 
                 exit={{ height: 0, bottom: "50%"}}
-                transition={{ delay: 0.3, duration: 0.8, ease: easeOut,  delay: 1 }} 
+                transition={{ duration: 0.8, ease: easeOut,  delay: 1 }} 
                 className='Splash big-wrapper'>
                     <motion.div 
                     key="Splash"
@@ -44,9 +44,9 @@ class Splash extends React.Component {
                             <Content langHandleClick={this.props.langHandleClick}/>
                     </motion.div>
                 </motion.div>) :
-            (<div className="Splash big-wrapper"><Content langHandleClick={this.props.langHandleClick} goHandleClick={this.props.goHandleClick}/></div>)
-            }
-            </div>
+                (<div className="Splash big-wrapper"><Content langHandleClick={this.props.langHandleClick} goHandleClick={this.props.goHandleClick}/></div>)
+                }
+                </div>
                )
      }
 
@@ -74,14 +74,14 @@ class Content extends React.Component {
                 transition={{ opacity: {duration: 0.5, ease: easeIn, delay: 1}  }} 
                 className='lang-wrapper'>
                     <div onClick={() => {this.props.langHandleClick("italiano"); this.props.goHandleClick(-1)}}>
-                    <Link to="/0" className="first-link">
-                    <img alt="ita" src="images/it.png"/>
-                    </Link>
+                        <Link to="/0" className="first-link">
+                            <img alt="ita" src="images/it.png"/>
+                        </Link>
                     </div>
                     <div onClick={() => {this.props.langHandleClick("english"); this.props.goHandleClick(-1)}}>
-                    <Link to="/0" className="first-link">
-                    <img alt="eng" src="/images/uk.png"/>
-                    </Link>
+                        <Link to="/0" className="first-link">
+                            <img alt="eng" src="/images/uk.png"/>
+                        </Link>
                     </div>
                 </motion.div>
             </div>
