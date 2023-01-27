@@ -216,6 +216,7 @@ class Content extends React.Component {
                         <p>22/12/1993</p>
                         <div className='social'>
                             <a target="_blank" rel="noreferrer" href="https://www.facebook.com/alessandrocoronam/"><img alt='facebook' src="/images/facebook.png"/></a>
+                            <a target="_blank" rel="noreferrer" href="/CV.pdf"><img alt='cv' src="/images/cv.png"/></a>
                             <a target="_blank" rel="noreferrer" href="https://www.instagram.com/blindflotnr/"><img alt='instagram' src="/images/instagram.png"/></a>
                             <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/alessandro-corona-mendozza-9533b6188/"><img alt='linkedin' src="/images/linkedin.png"/></a>
                         </div>
@@ -231,7 +232,7 @@ class Content extends React.Component {
                     <div className="name-and-social">
                         <h1>Alessandro Corona M<span className="mobile-none">endozza</span></h1>
                         <div className='social'>
-                            <a target="_blank" rel="noreferrer" href="https://www.facebook.com/alessandrocoronam/"><img alt='facebook' src="/images/facebook.png"/></a>
+                        <a target="_blank" rel="noreferrer" href="/CV.pdf"><img alt='cv' src="/images/cv.png"/></a>
                             <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/alessandro-corona-mendozza-9533b6188/"><img alt='linkedin' src="/images/linkedin.png"/></a>
                             <a target="_blank" rel="noreferrer" href="mailto:alessandro.corona.m@gmail.com"><img alt='mail' src="/images/mail.png"/></a>
                             <a target="_blank" rel="noreferrer" href="tel:+39-339-545-2982"><img alt='phone' src="/images/telephone.png"/></a>
