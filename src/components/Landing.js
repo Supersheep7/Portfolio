@@ -112,29 +112,33 @@ class Landing extends React.Component {
                 onTouchStart={e => this.handleTouchStart(e)}
                  onTouchMove={e => this.handleTouchMove(e)}>
                 { !this.Touch() ?
-                    (<Link id="link-left" to={`/3`} onClick={() => this.handleNavClick() }>
+                    (
+                    <Link id="link-left" to={`/3`} onClick={() => this.handleNavClick() }>
                         <div className='switch-wrapper switch-left'
                         onMouseEnter={() => this.handleOpacity("left", 1)} onMouseLeave={() => this.handleOpacity("left", 0.3)}>  
                             <h1 className={'nav-text nav-text-left out' + this.state.out} style={{opacity: this.state.navLeftOpacity}}>About</h1>
                         </div>
-                    </Link>) : (<Link id="link-left" to={`/3`} onClick={() => this.handleNavClick() }></Link>)
+                    </Link>
+                    ) : (<Link id="link-left" to={`/3`} onClick={() => this.handleNavClick() }></Link>)
                 }
                     <motion.div 
                     key="Landing" 
-                    initial={{x: 0 }} 
+                    initial={{x: "1%" }} 
                     animate={{x: 0 }} 
-                    transition={{ x: {duration: 2.5, ease: easeIn, type: "spring", bounce: 0.16, damping: 14}  }} 
+                    transition={{ x: {duration: 0.1, ease: easeIn, type: "spring", bounce: 0.16, damping: 14}  }} 
                     exit={{x: 0 }}
                     className='Landing big-wrapper'>
                         <Content language={this.props.language} delayed="1"/>
                     </motion.div>
                     { !this.Touch() ?
-                    (<Link id="link-right" to={`/${(this.state.thisPage + 1) % 4}`} onClick={() => this.handleNavClick() }>                    
+                    (
+                    <Link id="link-right" to={`/${(this.state.thisPage + 1) % 4}`} onClick={() => this.handleNavClick() }>                    
                         <div className='switch-wrapper switch-right'
                         onMouseEnter={() => this.handleOpacity("right", 1)} onMouseLeave={() => this.handleOpacity("right", 0.3)}>
                             <h1 className={'nav-text nav-text-right out' + this.state.out} style={{opacity: this.state.navRightOpacity}}>Repo</h1>
                         </div>
-                    </Link>) : (<Link id="link-right" to={`/${(this.state.thisPage + 1) % 4}`} onClick={() => this.handleNavClick() }></Link>)
+                    </Link>
+                    ) : (<Link id="link-right" to={`/${(this.state.thisPage + 1) % 4}`} onClick={() => this.handleNavClick() }></Link>)
                     }
                 </div>
             )
@@ -273,8 +277,7 @@ function Eng() {
         <div>
             <p>Hello, I'm Alessandro, a self-taught <strong>web developer</strong>.</p>
             <p>My current expertise stems from the online classes at <a target="_blank" href="https://www.w3schools.com/"><strong>W3</strong></a>, <a target="_blank" href="https://www.edx.org/course/cs50s-web-programming-with-python-and-javascript?index=product&amp;queryID=95a3a09fb915fb3aad078e940337c9a3&amp;position=3"><strong>CS50</strong></a>, <a target="_blank" href="https://www.freecodecamp.org/"><strong>freecodecamp</strong></a>, <a target="_blank" href="https://www.theodinproject.com/"><strong>The Odin Project</strong></a>.</p>
-            <p>So far I worked with a <strong>MERN</strong> stack. I think it's a good choice for building scalable web apps on a lightweight framework consistent with React, which is my main tool on the front end.</p>
-            <span className='tablet-none'><p>I can work with vanillaJS and jQuery (if required) and develop apps via python in a django/flask environment. I've got a good grasp on relational databases, yet I never used one in a personal project.</p></span>
+            <p>So far I worked with a <strong>MERN</strong> stack. I think it's a good choice for building scalable web apps on a lightweight framework consistent with React, which is my main tool on the front end. <span className='tablet-none'>I can work with vanillaJS and jQuery (if required) and develop apps via python in a django/flask environment. I've got a good grasp on relational databases, yet I never used one in a personal project.</span></p>
         </div>
     )
 }

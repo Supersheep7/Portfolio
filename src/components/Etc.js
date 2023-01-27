@@ -230,7 +230,7 @@ function Eng(props) {
     {
     return (
         <div>
-            <h2>College</h2>
+            <h2>University</h2>
             <div>
             <p>I'm a <b>PHILOSOPHY</b> graduate from Bologna's <a target="_blank" href="https://www.unibo.it/"><strong>Alma Mater Studiorum</strong></a>, focusing mainly on epistemology (philosophy of science, mind, knowledge, language and logic).</p> 
                 <br />

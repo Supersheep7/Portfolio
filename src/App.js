@@ -54,8 +54,10 @@ class App extends React.Component {
   
   componentDidMount() {
     this.preloadImages()
-}
-
+    window.onbeforeunload = function() {
+          window.alert("reloaded");
+      };
+  }
 }
 
   

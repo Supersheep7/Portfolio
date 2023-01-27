@@ -13,7 +13,6 @@ function AnimatedRoutes(props) {
 
         return (
         <AnimatePresence>
-           
                 (<Routes location={location} key={location.pathname}>
                     <Route path="/" element={<Splash langHandleClick={props.langHandleClick} whatPage={props.whatPage} previousPage={props.previousPage} goHandleClick={props.goHandleClick}/>} key="splash"/>
                     <Route path="/0" element={<Landing language={props.language} whatPage={props.whatPage} previousPage={props.previousPage} goHandleClick={props.goHandleClick}/>} key="landing"/>
