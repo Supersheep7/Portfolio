@@ -113,7 +113,7 @@ class Landing extends React.Component {
 
                     { !this.Touch() ?
                         (
-                        <Link id="link-left" to={`/3`} onClick={() => this.handleNavClick() }>
+                        <Link id="link-left" to={`/3`} onClick={() => this.handleNavClick()} >
                             <div className='switch-wrapper switch-left'
                             onMouseEnter={() => this.handleOpacity("left", 1)} onMouseLeave={() => this.handleOpacity("left", 0.3)}>  
                                 <h1 className={'nav-text nav-text-left out' + this.state.out} style={{opacity: this.state.navLeftOpacity}}>About</h1>

@@ -37,7 +37,8 @@ class Splash extends React.Component {
                 className='Splash big-wrapper'>
                     <motion.div 
                     key="Splash"
-                    initial={{opacity: 1 }} 
+                    initial={{ opacity: [0, 1] }}
+                    animate={{opacity: 1 }} 
                     exit={{  filter: ["blur(0px)", "blur(20px)"], opacity: [1, 0] }}
                     transition={{ duration: 0.6, ease: easeIn, delay: 0.3 }} 
                     className='Splash big-wrapper byebye'>
@@ -69,9 +70,10 @@ class Content extends React.Component {
                 <h1>Ciao!</h1>
                 <motion.div 
                 key="lang"
-                initial={{opacity: 0 }} 
+                initial={{ opacity: [0, 1] }}
                 animate={{opacity: 1 }} 
-                transition={{ opacity: {duration: 0.5, ease: easeIn, delay: 1}  }} 
+                exit={{  filter: ["blur(0px)", "blur(20px)"], opacity: [1, 0] }}
+                transition={{ duration: 0.6, ease: easeIn, delay: 0.3 }} 
                 className='lang-wrapper'>
                     <div onClick={() => {this.props.langHandleClick("italiano"); this.props.goHandleClick(-1)}}>
                         <Link to="/0" className="first-link">
