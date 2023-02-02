@@ -253,7 +253,7 @@ class Content extends React.Component {
                         <a target="_blank" rel="noreferrer" href="https://nodejs.org/en/"><img className='node' alt='node' src="/images/node.png"/></a>       
                     </div> 
                     <div className="Small-competences-wrapper"> 
-                        <a target="_blank" rel="noreferrer" href="https://www.javascript.com/"><Glass n="1" delayed={this.props.delayed} className='js'/></a>
+                        <a target="_blank" rel="noreferrer" href="https://www.typescriptlang.org/"><Glass n="1" delayed={this.props.delayed} className='ts'/></a>
                         <a target="_blank" rel="noreferrer" href="https://jquery.com/"><Glass n="2" delayed={this.props.delayed} className='jquery'/></a>
                         <a target="_blank" rel="noreferrer" href="https://redux.js.org/"><Glass n="3" delayed={this.props.delayed} className='redux'/></a>
                         <a target="_blank" rel="noreferrer" href="https://sass-lang.com/"><Glass n="4" delayed={this.props.delayed} className='sass'/></a>
@@ -285,7 +285,7 @@ function Eng() {
         <div>
             <p>Hello, I'm Alessandro, a self-taught <strong>web developer</strong>.</p>
             <p>My current expertise stems from the online classes at <a target="_blank" rel="noreferrer" href="https://www.w3schools.com/"><strong>W3</strong></a>, <a target="_blank" rel="noreferrer" href="https://www.edx.org/course/cs50s-web-programming-with-python-and-javascript?index=product&amp;queryID=95a3a09fb915fb3aad078e940337c9a3&amp;position=3"><strong>CS50</strong></a>, <a target="_blank" rel="noreferrer" href="https://www.freecodecamp.org/"><strong>freecodecamp</strong></a>, <a target="_blank" rel="noreferrer" href="https://www.theodinproject.com/"><strong>The Odin Project</strong></a>.</p>
-            <p>So far I worked with a <strong>MERN</strong> stack. I think it's a good choice for building scalable web apps on a lightweight framework consistent with React, which is my main tool on the front end. <span className='tablet-none'>I can work with vanillaJS and jQuery (if required) and develop apps via python in a django/flask environment. I've got a good grasp on relational databases, yet I never used one in a personal project.</span></p>
+            <p>So far I worked with a <strong>MERN</strong> stack. I think it's a good choice for building scalable web apps on a lightweight framework consistent with React, which is my main tool on the front end. <span className='tablet-none'>I can work with Typescript and jQuery (if required) and develop apps via python in a django/flask environment. I've got a good grasp on relational databases, yet I never used one in a personal project.</span></p>
         </div>
     )
 }
@@ -295,7 +295,7 @@ function Ita() {
             <p>Ciao, sono Alessandro, uno <strong>sviluppatore web</strong> autodidatta. </p>
             <p>Per maturare le mie prime competenze ho studiato i curriculum online di <a target="_blank" rel="noreferrer" href="https://www.w3schools.com/"><strong>W3</strong></a>, <a href="https://www.edx.org/course/cs50s-web-programming-with-python-and-javascript?index=product&amp;queryID=95a3a09fb915fb3aad078e940337c9a3&amp;position=3"><strong>CS50</strong></a>, <a target="_blank" rel="noreferrer" href="https://www.freecodecamp.org/"><strong>freecodecamp</strong></a>, <a target="_blank" rel="noreferrer" href="https://www.theodinproject.com/"><strong>The Odin Project</strong></a>.</p>
             <p>Finora ho lavorato in <strong>MERN</strong> stack per costruire web app scalabili con framework leggeri senza rinunciare ad usare React, la mia scelta per il frontend.</p>
-            <span className='tablet-none'><p>Implemento vanillaJS e jQuery laddove necessario; so scrivere in python e realizzare app su django/flask. Ho una buona comprensione generale dei database relazionali, anche se non li ho mai usati in un progetto personale.</p></span>
+            <span className='tablet-none'><p>Implemento Typescript e jQuery laddove necessario; so scrivere in python e realizzare app su django/flask. Ho una buona comprensione generale dei database relazionali, anche se non li ho mai usati in un progetto personale.</p></span>
         </div>        
     )
 }
