@@ -210,8 +210,8 @@ class Content extends React.Component {
                         </div>
                     <div className='Bio glass'>
                         <p>Alessandro Corona Mendozza</p>
-                        <a target="_blank" rel="noreferrer" href="https://goo.gl/maps/CNXmcxY2PKg13dMW6"><p>Bologna, via dei Bibiena 6</p></a>
-                        <a target="_blank" rel="noreferrer" href="tel:+39-339-545-2982"><p>+39 339 545 2982</p></a>
+                        <a target="_blank" rel="noreferrer" href="https://goo.gl/maps/CNXmcxY2PKg13dMW6"><p>Dieselvej 40, 2450 København SV</p></a>
+                        <a target="_blank" rel="noreferrer" href="tel:+39-339-545-2982"><p>+45 91 82 70 50</p></a>
                         <a target="_blank" rel="noreferrer" href="mailto:alessandro.corona.m@gmail.com"><p>alessandro.corona.m@gmail.com</p></a>
                         <p>22/12/1993</p>
                         <div className='social'>
