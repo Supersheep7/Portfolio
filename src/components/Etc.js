@@ -237,7 +237,7 @@ function Eng(props) {
                 <br />
                 <p>I'm a <b>PHILOSOPHY</b> graduate from Bologna's <a target="_blank" rel="noreferrer" href="https://www.unibo.it/"><strong>Alma Mater Studiorum</strong></a>, focusing mainly on epistemology (philosophy of science, mind, knowledge, language and logic).</p> 
                 <br />
-                <p>I kept studying philosphy until 2020 and I'm still significantly passionate about the subject. As an Alma Mater alumnus I was a <b>SPEAKER</b> for many seminars concerning bibliographical research, political philosophy, industry 4.0 and musical journalism.</p> 
+                <p>I kept studying philosphy until 2020 and I'm still significantly passionate about the subject. As an Alma Mater alumnus I was a <b>SPEAKER</b> for many seminars.</p> 
             </div>    
         </div>    
                             )
